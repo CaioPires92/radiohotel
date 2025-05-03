@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rádio Hotel Resort & Convention</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="assets/faviconV2.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+
+
+</head>
+
+<body>
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="assets/logo-color.png" alt="Rádio Hotel Logo" class="logo">
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#acomodacoes">Acomodações</a></li>
+                    <li><a href="#lazer">Lazer</a></li>
+                    <li><a href="#programacao">Programação</a></li>
+                    <li><a href="#passeios">Passeios</a></li>
+                    <li><a href="#convencoes">Convenções</a></li>
+                    <li><a href="#restaurante">Restaurante</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+                <button class="cta-button">Reservar Agora</button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Experiência Exclusiva em Serra Negra</h1>
+            <p>Seu refúgio perfeito com conforto, natureza e hospitalidade incomparáveis</p>
+            <button class="cta-button">Conheça Nossas Ofertas</button>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div class="reserva">
+            <h2>Consulte Disponibilidade</h2>
+            <form id="reservaForm">
+                <div class="form-group">
+                    <label for="checkin">Check-in</label>
+                    <input type="text" id="checkin" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkout">Check-out</label>
+                    <input type="text" id="checkout" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="adultos">Adultos</label>
+                    <select id="adultos" class="form-control" required>
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="criancas">Crianças</label>
+                    <select id="criancas" class="form-control" required>
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tipoQuarto">Tipo de Quarto</label>
+                    <select id="tipoQuarto" class="form-control" required>
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="Standard">Standard</option>
+                        <option value="Luxo">Luxo</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Consultar Disponibilidade</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+    <section class="section" id="sobre">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Sobre o Rádio Hotel</h2>
+                <p>Tradição e excelência em hospitalidade há mais de 50 anos.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>O Rádio Hotel Resort & Convention é um refúgio encantador localizado em Serra Negra, no interior
+                        de São Paulo. Com uma história rica e uma tradição de excelência, oferecemos uma experiência
+                        única de hospedagem que combina o charme clássico com o conforto moderno.</p>
+                    <p>Nosso resort está estrategicamente posicionado próximo às principais atrações da região,
+                        proporcionando aos nossos hóspedes o equilíbrio perfeito entre tranquilidade e conveniência. A
+                        apenas alguns minutos a pé do centro da cidade, oferecemos fácil acesso a lojas, restaurantes e
+                        pontos turísticos locais.</p>
+                    <p>Aqui, cada detalhe é cuidadosamente planejado para garantir que sua estadia seja memorável,
+                        confortável e rejuvenescedora.</p>
+                </div>
+                <div class="about-image">
+                    <img src="/assets/radio.jpg" alt="Rádio Hotel Resort & Convention">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="acomodacoes">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Acomodações</h2>
+                <p>Conforto e elegância em cada detalhe</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/acomodacao.jpg" alt="Apartamento Standard">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Apartamento Standard</h3>
+                        <p class="card-text">Apartamentos Standard são internos ou de frente para rua, possuem janelas
+                            termo-acústicas (tecnologia alemã), geladeira, telefone, ar condicionado.</p>
+                        <a href="#" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- <div class="card">
+                    <div class="card-image">
+                        <img src="assets/acomodacao.jpg" alt="Apartamento Superior">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Apartamento Superior</h3>
+                        <p class="card-text">Quartos espaçosos com até 40m², varanda privativa, cama king size, ar
+                            condicionado, TV LED 43", frigobar, banheiro privativo com amenities premium.</p>
+                        <a href="#" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div> -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/acomodacao.jpg" alt="Apartamento Luxo">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Apartamento Luxo</h3>
+                        <p class="card-text"> Apartamentos luxo 8m² maiores, com vista para a piscina. Equipados com
+                            geladeira, telefone,
+                            ar-condicionado e piso anti-alérgico.
+                        </p>
+                        <a href="#" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="lazer">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Lazer & Recreação</h2>
+                <p>Diversão e relaxamento para todas as idades</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/lazer.jpg" alt="Piscinas">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Piscinas</h3>
+                        <p class="card-text">
+                            Desfrute da nossa piscina climatizada, perfeita para mergulhos em qualquer estação. Relaxe
+                            na piscina aquecida, ideal para os dias mais frios. E viva momentos únicos na piscina do
+                            bosque, cercada pela natureza e pela tranquilidade.</p>
+                        <a href="#" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/lazer.jpg" alt="Esportes">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Esportes</h3>
+                        <p class="card-text">O Rádio Hotel oferece quadra de tênis, beach tennis e espaço para prática
+                            de arco e flecha.</p>
+                        <a href="#" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/lazer.jpg" alt="Recreação">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Recreação</h3>
+                        <p class="card-text">Recreação infantil e adulto na área de esporte aos finais de semana, todos
+                            os dias da alta temporada e em feriados prolongados.</p>
+                        <a href="#" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="restaurante">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Gastronomia</h2>
+                <p>Uma experiência gastronômica inesquecível</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/restaurante.jpg" alt="Restaurante Principal">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Restaurante Cinquentenário</h3>
+                        <p class="card-text">
+                            Ambiente requintado e a tradição de sempre servir o melhor cardápio a La Carte (domingo à
+                            quinta-feira) ou Buffet completo de frios, saladas e doces (finais de semana, feriados e
+                            períodos de alta temporada).</p>
+                        <a href="#" class="card-link">Ver cardápio <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/restaurante.jpg" alt="Café e Bistrô">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Restaurante Paradiso</h3>
+                        <p class="card-text">
+                            Junto ao bosque de mata nativa, de frente para as piscinas. Cardápio de grelhados e buffet
+                            completo de frios, saladas e doces, aberto nas altas temporadas e feriados.</p>
+                        <a href="#" class="card-link">Ver cardápio <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/restaurante.jpg" alt="Bar da Piscina">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Bar da Piscina</h3>
+                        <p class="card-text">Drinks refrescantes, petiscos e lanches rápidos servidos à beira da
+                            piscina. Desfrute de um coquetel enquanto aproveita o sol e a paisagem deslumbrante.</p>
+                        <a href="#" class="card-link">Ver cardápio <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="convencoes">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Centro de Convenções</h2>
+                <p>Espaços versáteis para eventos corporativos e sociais</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/convencoes.jpg" alt="Salão de Eventos">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Salão de Eventos</h3>
+                        <p class="card-text">Salão com capacidade para até 500 pessoas, ideal para casamentos,
+                            formaturas e grandes eventos corporativos. Estrutura completa de som, iluminação e
+                            climatização.</p>
+                        <a href="#" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/convencoes.jpg" alt="Salas de Reunião">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Salas de Reunião</h3>
+                        <p class="card-text">Cinco salas moduláveis para reuniões corporativas, treinamentos e workshops
+                            com capacidade de 10 a 50 pessoas. Equipamentos audiovisuais de última geração.</p>
+                        <a href="#" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/convencoes.jpg" alt="Business Center">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Business Center</h3>
+                        <p class="card-text">Estações de trabalho individuais, sala de reunião expressa e serviços de
+                            secretariado disponíveis 24 horas para atender às necessidades dos hóspedes em viagem de
+                            negócios.</p>
+                        <a href="#" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="testimonial">
+        <div class="container">
+            <div class="testimonial-content">
+                <p class="testimonial-text">Nossa estadia no Rádio Hotel foi incrível. Atendimento impecável,
+                    instalações confortáveis e a gastronomia surpreendente. Certamente voltaremos com a família!</p>
+                <p class="testimonial-author">Ana e Carlos Silva - São Paulo/SP</p>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Planeje suas férias especiais</h2>
+            <p class="cta-text">Reserve agora e garanta as melhores tarifas e condições especiais para sua estadia no
+                Rádio Hotel Resort & Convention.</p>
+            <a href="#" class="cta-btn">Reservar Agora</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column footer-about">
+                    <img src="assets/logo (1).png" alt="Rádio Hotel Logo" class="footer-logo">
+                    <p>O Rádio Hotel Resort & Convention combina conforto, elegância e hospitalidade para proporcionar
+                        momentos inesquecíveis em Serra Negra, SP.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#acomodacoes">Acomodações</a></li>
+                        <li><a href="#lazer">Lazer</a></li>
+                        <li><a href="#Programação">Programação</a></li>
+                        <li><a href="#passeios">Passeios</a></li>
+                        <li><a href="#restaurante">Restaurante</a></li>
+                        <li><a href="#convencoes">Convenções</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Serviços</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Reservas Online</a></li>
+                        <li><a href="#">Day Use</a></li>
+                        <li><a href="#">Eventos Corporativos</a></li>
+                        <li><a href="#">Pacotes Temáticos</a></li>
+                        <li><a href="#">Transfer</a></li>
+                        <li><a href="#">Spa & Massagem</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Contato</h3>
+                    <div class="footer-contact">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Rua Cel. Pedro Penteado, 387 Centro
+                            <br>Serra Negra, SP - CEP 13930-000</span>
+                    </div>
+
+                    <div class="footer-contact">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>(19) 3892.3311 | 3892.2284</span>
+                    </div>
+                    <div class="footer-contact">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>(19) 99990-3311</span>
+                    </div>
+                    <div class="footer-contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>reservas@radiohotel.com.br</span>
+                    </div>
+                </div>
+                <div class="footer-column newsletter">
+                    <h3 class="footer-heading">Newsletter</h3>
+                    <p>Cadastre-se para receber nossas novidades e ofertas exclusivas:</p>
+                    <form id="newsletter-form" action="mailto:caiocgp92@gmail.com" method="GET">
+                        <input type="email" name="email" id="email" placeholder="Seu e-mail" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                    <div class="container-word-travel">
+                        <img src="assets/icon/word-travel.png" alt="word travel" class="icon-word-travel">
+                    </div>
+                </div>
+
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Rádio Hotel Resort & Convention. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <a href="https://wa.me/55999999999" class="whatsapp-fixo" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Fale conosco no WhatsApp"
+            width="50">
+        <!-- <i class="fab fa-whatsapp" alt="Fale conosco no WhatsApp" width="50"></i> -->
+
+    </a>
+
+
+    <button onclick="topFunction()" id="btnTopo" title="Voltar ao topo">↑</button>
+
+
+    <script src="script.js"></script>
+
+
+
+</body>

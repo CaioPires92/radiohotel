@@ -1,0 +1,996 @@
+:root {
+    --primary: #003366;
+    /* Azul marinho (substituindo o azul anterior) */
+    --secondary: #C0A060;
+    /* Dourado suave (substituindo o amarelo) */
+    --light: #F5F5F5;
+    /* Branco gelo (substituindo o branco anterior) */
+    --dark: #2C2C2C;
+    /* Cinza carvão (substituindo o cinza escuro) */
+    --accent: #4B5320;
+    /* Verde musgo (substituindo o laranja) */
+    --text: #444444;
+    /* Cor de texto ligeiramente ajustada */
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    /* Alterado para Open Sans */
+    color: var(--text);
+    line-height: 1.6;
+    background-color: var(--light);
+    overflow-x: hidden;
+}
+
+.whatsapp-fixo {
+    display: inline-flex;
+    /* Garante que a imagem se ajuste ao conteúdo */
+    width: fit-content;
+    height: fit-content;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: pulse 2s infinite;
+    /* Animação pulsante */
+    padding: 8px;
+    /* Adiciona um espaçamento ao redor da imagem */
+    border-radius: 50%;
+    /* Garante que a área do ícone seja circular */
+    background-color: #25D366;
+    /* Cor de fundo para o círculo */
+}
+
+.whatsapp-fixo:hover {
+    transform: scale(1.1);
+    /* Aumenta um pouco o tamanho quando passar o mouse */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+    /* Sombras verdes para destacar */
+}
+
+.whatsapp-fixo img {
+    width: 40px;
+    /* Tamanho do ícone */
+    height: auto;
+    /* Ajusta a altura proporcionalmente */
+    border-radius: 50%;
+    /* Garantir que o ícone tenha borda redonda */
+}
+
+
+#btnTopo {
+    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    background-color: var(--secondary);
+    /* Igual ao seu botão submit */
+    color: var(--dark);
+    cursor: pointer;
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 51, 102, 0.3);
+    /* Mesmo tipo de sombra */
+    transition: var(--transition);
+    flex: 0 0 auto;
+    /* Opcional pra evitar quebrar responsividade */
+}
+
+#btnTopo:hover {
+    background-color: var(--primary);
+    /* Igual ao hover do seu submit */
+    color: white;
+    transform: translateY(-3px);
+}
+
+
+
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Montserrat', serif;
+    /* Alterado para Montserrat */
+    font-weight: 600;
+}
+
+header {
+    background: white;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+header.scrolled {
+    padding: 10px 0;
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.logo {
+    height: 80px;
+    transition: var(--transition);
+}
+
+header.scrolled .logo {
+    height: 50px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    white-space: nowrap;
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    font-size: 16px;
+    position: relative;
+    padding: 5px 0;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-links a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--secondary);
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-links a:hover:after {
+    width: 100%;
+}
+
+.cta-button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-left: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+    background-color: var(--secondary);
+    color: var(--dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(192, 160, 96, 0.3);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 100%;
+    background-color: var(--dark);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('assets/radio.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding-top: 90px;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeInDown 1s ease;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease;
+}
+
+
+/* Formulario de Reserva */
+
+
+.reserva {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-top: 40px;
+    animation: fadeInUp 1s ease;
+    max-width: 900px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 4px solid var(--secondary);
+}
+
+
+.reserva h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+
+
+
+.reserva form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 0;
+}
+
+.form-group {
+    flex: 1 1 200px;
+    min-width: 200px;
+    max-width: 300px;
+    /* Mantém um tamanho máximo adequado */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark);
+    font-size: 14px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.2);
+}
+
+.btn-submit {
+    background-color: var(--secondary);
+    color: var(--dark);
+    border: none;
+    padding: 14px 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+    flex: 1 1 200px;
+    min-width: 200px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.btn-submit:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 51, 102, 0.35);
+}
+
+
+/* Responsividade até 1024px */
+@media screen and (max-width: 1024px) {
+    .form-group {
+        flex: 1 1 100%;
+        /* Os elementos vão ocupar a tela inteira, mas na vertical */
+        max-width: none;
+        /* Remover o limite máximo */
+    }
+
+    .btn-submit {
+        flex: 1 1 100%;
+        /* O botão vai ocupar 100% da largura */
+    }
+
+    .reserva h2 {
+        font-size: 1.6rem;
+        /* Ajuste no tamanho do título */
+    }
+
+    .form-control {
+        font-size: 14px;
+        /* Diminui o tamanho da fonte */
+    }
+
+    .btn-submit {
+        font-size: 14px;
+        /* Diminui o tamanho do botão */
+    }
+}
+
+/* Responsividade menor que 768px */
+@media screen and (max-width: 768px) {
+    .reserva form {
+        flex-direction: row;
+        /* Troca o layout para horizontal */
+        justify-content: space-between;
+        /* Espaça os itens de forma proporcional */
+    }
+
+    .form-group {
+        flex: 1 1 45%;
+        /* Cada campo vai ocupar 45% da largura */
+        min-width: 120px;
+        /* Garante um mínimo de largura para os campos */
+    }
+
+    .btn-submit {
+        flex: 1 1 100%;
+        /* O botão ainda ocupa a largura total em telas menores */
+    }
+}
+
+
+
+
+/* Formulario de Reserva */
+
+
+.section {
+    padding: 100px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-heading h2 {
+    font-size: 2.8rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-heading h2:after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-heading p {
+    font-size: 1.2rem;
+    color: var(--text);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1 1 500px;
+}
+
+.about-image {
+    flex: 1 1 400px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.about-image:before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    border: 2px solid var(--secondary);
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.about-image:hover:before {
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    opacity: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 3px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+    border-bottom-color: var(--secondary);
+}
+
+.card-image {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.card-text {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: var(--text);
+    flex-grow: 1;
+}
+
+.card-link {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    transition: var(--transition);
+    margin-top: auto;
+}
+
+.card-link i {
+    margin-left: 5px;
+    transition: var(--transition);
+}
+
+.card-link:hover {
+    color: var(--primary);
+}
+
+.card-link:hover i {
+    transform: translateX(5px);
+}
+
+.testimonial {
+    background-color: #eef2f7;
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+}
+
+.testimonial:before {
+    content: "" ";
+ font-size: 150px;
+    color: var(--secondary);
+    opacity: 0.1;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: serif;
+}
+
+.testimonial-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-text {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: var(--dark);
+    position: relative;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+footer {
+    background-color: var(--dark);
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    gap: 30px;
+}
+
+.footer-column {
+    flex: 1 1 250px;
+}
+
+.footer-logo {
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.footer-about p {
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.footer-heading {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: white;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-heading:after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background-color: var(--secondary);
+    bottom: 0;
+    left: 0;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: white;
+    opacity: 0.8;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    color: var(--secondary);
+    transform: translateX(5px);
+}
+
+.footer-contact {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.footer-contact i {
+    margin-right: 15px;
+    color: var(--secondary);
+    font-size: 1.2rem;
+}
+
+.fab.fa-whatsapp {
+    font-weight: 400;
+    /* Valores: 100 a 900 (normal = 400) */
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background-color: var(--secondary);
+    color: var(--dark);
+    transform: translateY(-3px);
+}
+
+.newsletter form {
+    display: flex;
+    margin-top: 20px;
+}
+
+.newsletter input {
+    flex-grow: 1;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 4px 0 0 4px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.newsletter button {
+    background-color: var(--secondary);
+    border: none;
+    padding: 0 20px;
+    border-radius: 0 4px 4px 0;
+    color: var(--dark);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.newsletter button:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.cta-section {
+    background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.9)), url('/api/placeholder/1200/600') center/cover no-repeat;
+    padding: 80px 0;
+    text-align: center;
+    color: white;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-text {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.cta-btn {
+    background-color: var(--secondary);
+    color: var(--dark);
+    font-weight: 600;
+    padding: 15px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-btn:hover {
+    background-color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.container-word-travel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.icon-word-travel {
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+        /* Aumenta no meio da animação */
+    }
+
+    100% {
+        transform: scale(1);
+        /* Volta ao normal */
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .nav-links {
+        flex-wrap: wrap;
+        /* Permite que os itens quebrem linha */
+        gap: 10px;
+        /* Reduz o espaçamento entre itens */
+        justify-content: center;
+        /* Centraliza os itens */
+        max-width: 100%;
+        /* Garante que não ultrapasse a tela */
+        padding: 10px 0;
+        /* Adiciona espaçamento vertical */
+    }
+
+    .nav-links li a {
+        font-size: 14px;
+        /* Reduz o tamanho da fonte */
+        padding: 5px 8px;
+        /* Ajusta o padding dos links */
+    }
+}
+
+
+
+@media (max-width: 992px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 90px;
+        right: -100%;
+        flex-direction: column;
+        background-color: white;
+        width: 80%;
+        max-width: 300px;
+        height: calc(100vh - 90px);
+        padding: 40px 20px;
+        z-index: 999;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: 0.5s ease;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .cta-button {
+        margin: 20px 0 0 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 2.2rem;
+    }
+
+    .testimonial-text {
+        font-size: 1.2rem;
+    }
+
+    .reserva form {
+        flex-direction: row;
+        /* Troca o layout para horizontal */
+        justify-content: space-between;
+        /* Espaça os itens de forma proporcional */
+    }
+
+    .form-group {
+        flex: 1 1 45%;
+        /* Cada campo vai ocupar 45% da largura */
+        min-width: 120px;
+        /* Garante um mínimo de largura para os campos */
+    }
+
+    .btn-submit {
+        flex: 1 1 100%;
+        /* O botão ainda ocupa a largura total em telas menores */
+    }
+}
+
+@media (max-width: 425px) {
+
+
+
+    .cta-button {
+        display: none !important;
+    }
+
+
+
+    .reserva h2 {
+        font-size: 1.4rem;
+        /* Título menor */
+    }
+
+    .form-control {
+        font-size: 12px;
+        /* Reduz o tamanho da fonte */
+    }
+
+    .btn-submit {
+        padding: 12px 20px;
+        /* Ajuste do tamanho do botão */
+        font-size: 12px;
+        /* Reduz o tamanho da fonte do botão */
+    }
+}
