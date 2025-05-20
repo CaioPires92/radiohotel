@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rádio Hotel Resort & Convention</title>
+    <title>Rádio Hotel Resort & Convention - Hospedagem em Serra Negra</title>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -12,8 +13,9 @@
     <link rel="icon" href="assets/faviconV2.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js" defer></script>
+
 
 
 </head>
@@ -22,7 +24,9 @@
     <header id="header">
         <div class="container header-container">
             <div class="logo-container">
-                <img src="assets/logo-color.png" alt="Rádio Hotel Logo" class="logo">
+                <img src="assets/logo-color.png" alt="Rádio Hotel Logo" class="logo logo-color">
+                <!--Muda a cor do logo quando rola a pagina-->
+                <img src="assets/logo.png" alt="Logo Branca" class="logo logo-white">
             </div>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -45,7 +49,16 @@
         </div>
     </header>
 
+
+
     <section class="hero" id="inicio">
+        <div class="video-bg">
+            <video autoplay muted loop playsinline>
+                <source src="assets/video-hero.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos em HTML5.
+            </video>
+        </div>
+        <div class="overlay"></div>
         <div class="hero-content">
             <h1>Experiência Exclusiva em Serra Negra</h1>
             <p>Seu refúgio perfeito com conforto, natureza e hospitalidade incomparáveis</p>
@@ -55,12 +68,7 @@
 
 
 
-
-
-
-
-
-    <div class="container">
+    <div class="container fade-in">
         <div class="reserva">
             <h2>Consulte Disponibilidade</h2>
             <form id="reservaForm">
@@ -112,7 +120,7 @@
 
 
 
-    <section class="section" id="sobre">
+    <section class="section fade-in" id="sobre">
         <div class="container">
             <div class="section-heading">
                 <h2>Sobre o Rádio Hotel</h2>
@@ -137,13 +145,13 @@
         </div>
     </section>
 
-    <section class="section" id="acomodacoes">
+    <section class="section fade-in" id="acomodacoes">
         <div class="container">
             <div class="section-heading">
                 <h2>Acomodações</h2>
                 <p>Conforto e elegância em cada detalhe</p>
             </div>
-            <div class="cards">
+            <div class="cards fade-in">
                 <div class="card">
                     <div class="card-image">
                         <img src="assets/acomodacao.jpg" alt="Apartamento Standard">
@@ -155,17 +163,7 @@
                         <a href="#" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <!-- <div class="card">
-                    <div class="card-image">
-                        <img src="assets/acomodacao.jpg" alt="Apartamento Superior">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Apartamento Superior</h3>
-                        <p class="card-text">Quartos espaçosos com até 40m², varanda privativa, cama king size, ar
-                            condicionado, TV LED 43", frigobar, banheiro privativo com amenities premium.</p>
-                        <a href="#" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div> -->
+
                 <div class="card">
                     <div class="card-image">
                         <img src="assets/acomodacao.jpg" alt="Apartamento Luxo">
@@ -183,7 +181,7 @@
         </div>
     </section>
 
-    <section class="section" id="lazer">
+    <section class="section fade-in" id="lazer">
         <div class="container">
             <div class="section-heading">
                 <h2>Lazer & Recreação</h2>
@@ -229,7 +227,7 @@
         </div>
     </section>
 
-    <section class="section" id="restaurante">
+    <section class="section fade-in" id="restaurante">
         <div class="container">
             <div class="section-heading">
                 <h2>Gastronomia</h2>
@@ -277,7 +275,7 @@
         </div>
     </section>
 
-    <section class="section" id="convencoes">
+    <section class="section fade-in" id="convencoes">
         <div class="container">
             <div class="section-heading">
                 <h2>Centro de Convenções</h2>
@@ -323,7 +321,7 @@
         </div>
     </section>
 
-    <!-- <section class="testimonial">
+    <!-- <section class="testimonial fade-in">
         <div class="container">
             <div class="testimonial-content">
                 <p class="testimonial-text">Nossa estadia no Rádio Hotel foi incrível. Atendimento impecável,
@@ -333,7 +331,7 @@
         </div>
     </section> -->
 
-    <section class="cta-section">
+    <section class="cta-section fade-in">
         <div class="container">
             <h2 class="cta-title">Planeje suas férias especiais</h2>
             <p class="cta-text">Reserve agora e garanta as melhores tarifas e condições especiais para sua estadia no
@@ -343,10 +341,10 @@
     </section>
 
     <footer>
-        <div class="container">
+        <div class="container fade-in">
             <div class="footer-content">
                 <div class="footer-column footer-about">
-                    <img src="assets/logo (1).png" alt="Rádio Hotel Logo" class="footer-logo">
+                    <img src="assets/logo.png" alt="Rádio Hotel Logo" class="footer-logo">
                     <p>O Rádio Hotel Resort & Convention combina conforto, elegância e hospitalidade para proporcionar
                         momentos inesquecíveis em Serra Negra, SP.</p>
                     <div class="social-links">
@@ -421,19 +419,16 @@
     </footer>
 
 
-    <a href="https://wa.me/55999999999" class="whatsapp-fixo" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/55999999999" aria-label="Fale conosco no WhatsApp" class="whatsapp-fixo" target="_blank"
+        rel="noopener noreferrer">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Fale conosco no WhatsApp"
             width="50">
-        <!-- <i class="fab fa-whatsapp" alt="Fale conosco no WhatsApp" width="50"></i> -->
-
     </a>
 
 
     <button onclick="topFunction()" id="btnTopo" title="Voltar ao topo">↑</button>
 
 
-    <script src="script.js"></script>
-
-
+    <script src="/script.js"></script>
 
 </body>

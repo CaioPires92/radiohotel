@@ -113,5 +113,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
         window.open(url, '_blank');
     });
+
 });
+
+
+
+// navbar transparente
+
+window.addEventListener('scroll', () => {
+    const header = document.getElementById('header');
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+
+
+// Elementos aparecendo na tela conforme rola
+const elements = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // para só disparar uma vez
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+elements.forEach(el => observer.observe(el));
 
