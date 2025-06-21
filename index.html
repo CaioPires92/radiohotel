@@ -4,27 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rádio Hotel Resort & Convention - Hospedagem em Serra Negra</title>
+    <title>Radio Hotel Resort & Convention - Hospedagem em Serra Negra</title>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Substituir por -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+
     <link rel="icon" href="assets/faviconV2.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js" defer></script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="js/script.js" defer></script>
 
 </head>
+
+
+
+
+
+
 
 <body>
     <header id="header">
         <div class="container header-container fade-in">
             <div class="logo-container">
-                <img src="assets/logo-color.png" alt="Rádio Hotel Logo" class="logo logo-color">
+                <img src="assets/logo-color.png" alt="Radio Hotel Logo" class="logo logo-color">
                 <!--Muda a cor do logo quando rola a pagina-->
                 <img src="assets/logo.png" alt="Logo Branca" class="logo logo-white">
             </div>
@@ -35,7 +48,7 @@
             </div>
             <nav>
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="#inicio">Home</a></li>
                     <li><a href="#acomodacoes">Acomodações</a></li>
                     <li><a href="#lazer">Lazer</a></li>
                     <li><a href="#programacao">Programação</a></li>
@@ -44,6 +57,9 @@
                     <li><a href="#restaurante">Restaurante</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
+
+
+
                 <button class="cta-button">Reservar Agora</button>
             </nav>
         </div>
@@ -67,8 +83,7 @@
     </section>
 
 
-
-    <div class="container fade-in">
+    <div class="container container-reserva fade-in">
         <div class="reserva">
             <h2>Consulte Disponibilidade</h2>
             <form id="reservaForm">
@@ -120,15 +135,37 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <section class="section fade-in" id="sobre">
         <div class="container">
             <div class="section-heading">
-                <h2>Sobre o Rádio Hotel</h2>
+                <h2>Sobre o Radio Hotel</h2>
                 <p>Tradição e excelência em hospitalidade há mais de 50 anos.</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>O Rádio Hotel Resort & Convention é um refúgio encantador localizado em Serra Negra, no interior
+                    <p>O Radio Hotel Resort & Convention é um refúgio encantador localizado em Serra Negra, no interior
                         de São Paulo. Com uma história rica e uma tradição de excelência, oferecemos uma experiência
                         única de hospedagem que combina o charme clássico com o conforto moderno.</p>
                     <p>Nosso resort está estrategicamente posicionado próximo às principais atrações da região,
@@ -139,11 +176,243 @@
                         confortável e rejuvenescedora.</p>
                 </div>
                 <div class="about-image">
-                    <img src="assets/DJI_0281.jpg" alt="Rádio Hotel Resort & Convention">
+                    <img src="assets/DJI_0281.jpg" alt="Radio Hotel Resort & Convention">
                 </div>
             </div>
         </div>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <button id="abrirModal" class="floating-popup">
+        <span class="popup-emoji">🎉</span>
+        <span class="popup-text">Férias!</span>
+    </button>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">🎉 Férias de Julho Imperdíveis!</h3>
+                <button class="modal-close" aria-label="Fechar" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Venha aproveitar as férias de julho no Radio Hotel!<br>
+                    Traga sua família e desfrute de momentos inesquecíveis:</p>
+
+                <ul class="modal-list">
+                    <li>🎁 30% OFF para reservas antecipadas</li>
+                    <li>🏊 Piscinas aquecidas e programação infantil</li>
+                    <li>🍽️ Café colonial incluso na diária</li>
+                    <li>🎉 Programação especial de férias</li>
+                </ul>
+
+                <div class="modal-actions">
+                    <a href="https://wa.me/5511999999999" class="btn-submit">
+                        📱 Reserve Agora
+                    </a>
+                    <button class="btn-secondary" onclick="closeModal()">Ver Detalhes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- NOVA SEÇÃO: DESTAQUES (COM CARROSSEL) -->
+    <section class="section fade-in" id="destaques">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Destaques do Hotel</h2>
+                <p>Conheça o que temos de melhor a oferecer para sua estadia.</p>
+            </div>
+
+            <!-- Swiper container -->
+            <div class="swiper-container destaques-carousel">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides (usando a estrutura do seu card) -->
+                    <!-- Cada slide é um card -->
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="assets/acomodacao.jpg" alt="Apartamento Luxo">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Acomodações de Luxo</h3>
+                                <p class="card-text">Apartamentos espaçosos com vista para a piscina e comodidades
+                                    premium para seu total conforto.</p>
+                                <a href="#acomodacoes" class="card-link">Saiba mais <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="assets/DJI_0487.jpg" alt="Piscinas">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Área de Piscinas</h3>
+                                <p class="card-text">Piscinas climatizada, aquecida e a charmosa piscina do bosque para
+                                    momentos de lazer.</p>
+                                <a href="#lazer" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="assets/IMG_0094.jpg" alt="Restaurante Cinquentenário">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Gastronomia Requintada</h3>
+                                <p class="card-text">Desfrute de pratos deliciosos em nossos restaurantes com opções a
+                                    La Carte e buffet.</p>
+                                <a href="#restaurante" class="card-link">Ver cardápio <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="assets/convencoes.jpg" alt="Centro de Convenções">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Eventos e Convenções</h3>
+                                <p class="card-text">Espaços versáteis e equipados para realizar seu evento corporativo
+                                    ou social com sucesso.</p>
+                                <a href="#convencoes" class="card-link">Saiba mais <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="assets/IMG_0129.jpg" alt="Recreação">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Recreação para a Família</h3>
+                                <p class="card-text">Atividades divertidas para crianças e adultos, garantindo a
+                                    diversão de todos.</p>
+                                <a href="#lazer" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Adicione mais slides conforme necessário. O carrossel funcionará com 3 ou mais slides. -->
+                </div>
+                <!-- If we need pagination (os pontinhos de navegação) -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons (as setas) -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- NOVA SEÇÃO: PARALLAX CTA -->
+    <section class="parallax-cta fade-in">
+        <div class="overlay"></div> <!-- Opcional: para escurecer a imagem de fundo -->
+        <div class="container">
+            <h2 class="cta-title">Pronto para Relaxar?</h2>
+            <p class="cta-text">Descubra a tranquilidade e o conforto que esperam por você em Serra Negra. Faça sua
+                reserva agora e viva momentos inesquecíveis.</p>
+            <a href="#" class="cta-btn">Reserve Já!</a>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <section class="section fade-in" id="acomodacoes">
         <div class="container">
@@ -151,7 +420,7 @@
                 <h2>Acomodações</h2>
                 <p>Conforto e elegância em cada detalhe</p>
             </div>
-            <div class="cards fade-in">
+            <div class="cards   fade-in">
                 <div class="card">
                     <div class="card-image">
                         <img src="assets/acomodacao.jpg" alt="Apartamento Standard">
@@ -201,17 +470,30 @@
                         <a href="#" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card card-middle">
                     <div class="card-image">
                         <img src="assets/DJI_0461.jpg" alt="Esportes">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Esportes</h3>
-                        <p class="card-text">O Rádio Hotel oferece quadra de tênis, beach tennis e espaço para prática
+                        <p class="card-text">O Radio Hotel oferece quadra de tênis, beach tennis e espaço para prática
                             de arco e flecha.</p>
                         <a href="#" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
+
+
+
+
+
+                <div class="card video-card video-only">
+                    <video class="fullscreen-video" autoplay muted loop playsinline>
+                        <source src="assets/video2.mp4" type="video/mp4">
+                    </video>
+
+                </div>
+
+
                 <div class="card">
                     <div class="card-image">
                         <img src="assets/IMG_0129.jpg" alt="Recreação">
@@ -275,6 +557,34 @@
         </div>
     </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <section class="section fade-in" id="convencoes">
         <div class="container">
             <div class="section-heading">
@@ -294,6 +604,33 @@
                         <a href="#" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <div class="card">
                     <div class="card-image">
                         <img src="assets/convencoes.jpg" alt="Salas de Reunião">
@@ -324,7 +661,7 @@
     <!-- <section class="testimonial fade-in">
         <div class="container">
             <div class="testimonial-content">
-                <p class="testimonial-text">Nossa estadia no Rádio Hotel foi incrível. Atendimento impecável,
+                <p class="testimonial-text">Nossa estadia no Radio Hotel foi incrível. Atendimento impecável,
                     instalações confortáveis e a gastronomia surpreendente. Certamente voltaremos com a família!</p>
                 <p class="testimonial-author">Ana e Carlos Silva - São Paulo/SP</p>
             </div>
@@ -335,7 +672,7 @@
         <div class="container">
             <h2 class="cta-title">Planeje suas férias especiais</h2>
             <p class="cta-text">Reserve agora e garanta as melhores tarifas e condições especiais para sua estadia no
-                Rádio Hotel Resort & Convention.</p>
+                Radio Hotel Resort & Convention.</p>
             <a href="#" class="cta-btn">Reservar Agora</a>
         </div>
     </section>
@@ -344,8 +681,8 @@
         <div class="container fade-in">
             <div class="footer-content">
                 <div class="footer-column footer-about">
-                    <img src="assets/logo.png" alt="Rádio Hotel Logo" class="footer-logo">
-                    <p>O Rádio Hotel Resort & Convention combina conforto, elegância e hospitalidade para proporcionar
+                    <img src="assets/logo.png" alt="Radio Hotel Logo" class="footer-logo">
+                    <p>O Radio Hotel Resort & Convention combina conforto, elegância e hospitalidade para proporcionar
                         momentos inesquecíveis em Serra Negra, SP.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -413,7 +750,7 @@
 
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Rádio Hotel Resort & Convention. Todos os direitos reservados.</p>
+                <p>&copy; 2025 Radio Hotel Resort & Convention. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
@@ -427,8 +764,5 @@
 
 
     <button onclick="topFunction()" id="btnTopo" title="Voltar ao topo">↑</button>
-
-
-    <script src="script.js"></script>
 
 </body>
