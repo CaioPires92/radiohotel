@@ -23,48 +23,16 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script defer src="load-components.js"></script>
     <script src="script.js" defer></script>
 
 </head>
 
 
 
-
-
-
-
 <body>
-    <header id="header">
-        <div class="container header-container fade-in">
-            <div class="logo-container">
-                <img src="assets/logo-color.png" alt="Radio Hotel Logo" class="logo logo-color">
-                <!--Muda a cor do logo quando rola a pagina-->
-                <img src="assets/logo.png" alt="Logo Branca" class="logo logo-white">
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#inicio">Home</a></li>
-                    <li><a href="#acomodacoes">Acomodações</a></li>
-                    <li><a href="#lazer">Lazer</a></li>
-                    <li><a href="#programacao">Programação</a></li>
-                    <li><a href="#passeios">Passeios</a></li>
-                    <li><a href="#convencoes">Convenções</a></li>
-                    <li><a href="#restaurante">Restaurante</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
 
-
-
-                <button class="cta-button">Reservar Agora</button>
-            </nav>
-        </div>
-    </header>
-
+    <div id="header-container"></div>
 
 
     <section class="hero" id="inicio">
@@ -83,52 +51,59 @@
     </section>
 
 
-    <div class="container container-reserva fade-in">
-        <div class="reserva">
-            <h2>Consulte Disponibilidade</h2>
-            <form id="reservaForm">
-                <div class="form-group">
-                    <label for="checkin">Check-in</label>
-                    <input type="text" id="checkin" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="checkout">Check-out</label>
-                    <input type="text" id="checkout" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="adultos">Adultos</label>
-                    <select id="adultos" class="form-control" required>
-                        <option value="" disabled selected>Selecione</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5+</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="criancas">Crianças</label>
-                    <select id="criancas" class="form-control" required>
-                        <option value="" disabled selected>Selecione</option>
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4+</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="tipoQuarto">Tipo de Quarto</label>
-                    <select id="tipoQuarto" class="form-control" required>
-                        <option value="" disabled selected>Selecione</option>
-                        <option value="Standard">Standard</option>
-                        <option value="Luxo">Luxo</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn-submit">Consultar Disponibilidade</button>
-            </form>
+
+    <section class="white">
+
+
+        <div class="container container-reserva fade-in ">
+            <div class="reserva">
+                <h2>Consulte Disponibilidade</h2>
+                <form id="reservaForm">
+                    <div class="form-group">
+                        <label for="checkin">Check-in</label>
+                        <input type="text" id="checkin" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout">Check-out</label>
+                        <input type="text" id="checkout" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adultos">Adultos</label>
+                        <select id="adultos" class="form-control" required>
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="criancas">Crianças</label>
+                        <select id="criancas" class="form-control" required>
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipoQuarto">Tipo de Quarto</label>
+                        <select id="tipoQuarto" class="form-control" required>
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="Standard">Standard</option>
+                            <option value="Luxo">Luxo</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit">Consultar Disponibilidade</button>
+                </form>
+            </div>
         </div>
-    </div>
+
+
+    </section>
 
 
 
@@ -157,7 +132,8 @@
 
 
 
-    <section class="section fade-in" id="sobre">
+
+    <section class="section fade-in white white" id="sobre">
         <div class="container">
             <div class="section-heading">
                 <h2>Sobre o Radio Hotel</h2>
@@ -247,107 +223,164 @@
 
 
 
+    <section class="section fade-in white" id="oque-fazer">
+        <div class="container">
+            <div class="section-heading">
+                <h2>O que fazer no Hotel</h2>
+                <p>Eventos e experiências imperdíveis</p>
+            </div>
+            <div class="swiper-container oquefazer-carousel swiper-hotel">
+                <div class="swiper-wrapper">
+                    <!-- Noite Italiana -->
+                    <div class="swiper-slide">
+                        <div class="image-slide img-oquefazer"
+                            style="display: flex; flex-direction: column; align-items: center;">
+                            <img class="" src="assets/noite-italiana.png" alt="Noite Italiana"
+                                style="width:100%; height:320px; object-fit:cover; border-radius:15px;">
+                            <div class="info-box">
+                                <span class="slide-title">Noite Italiana</span>
+                                <a href="#italiana" class="slide-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pacotes Especiais -->
+                    <div class="swiper-slide">
+                        <div class="image-slide" style="display: flex; flex-direction: column; align-items: center;">
+                            <img src="assets/pacotes-especiais.png" alt="Pacotes Especiais"
+                                style="width:100%; height:320px; object-fit:cover; border-radius:15px;">
+                            <div class="info-box">
+                                <span class="slide-title">Pacotes Especiais</span>
+                                <a href="#pacotes" class="slide-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Passeio Bosque -->
+                    <div class="swiper-slide">
+                        <div class="image-slide" style="display: flex; flex-direction: column; align-items: center;">
+                            <img src="assets/passeio-bosque.png" alt="Passeio no Bosque"
+                                style="width:100%; height:320px; object-fit:cover; border-radius:15px;">
+                            <div class="info-box">
+                                <span class="slide-title">Passeio no Bosque</span>
+                                <a href="#bosque" class="slide-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sábado Feijoada -->
+                    <div class="swiper-slide">
+                        <div class="image-slide" style="display: flex; flex-direction: column; align-items: center;">
+                            <img src="assets/Sábado-Feijoada.png" alt="Sábado Feijoada"
+                                style="width:100%; height:320px; object-fit:cover; border-radius:15px;">
+                            <div class="info-box">
+                                <span class="slide-title">Sábado Feijoada</span>
+                                <a href="#sabado" class="slide-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Férias Julho -->
+                    <div class="swiper-slide">
+                        <div class="image-slide" style="display: flex; flex-direction: column; align-items: center;">
+                            <img src="assets/Férias-Julho.png" alt="Férias de Julho"
+                                style="width:100%; height:320px; object-fit:cover; border-radius:15px;">
+                            <div class="info-box">
+                                <span class="slide-title">Férias de Julho</span>
+                                <a href="#ferias" class="slide-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Paginação/Setas -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
 
 
 
 
 
-
-
-
-
-
-
-
-
-    <!-- NOVA SEÇÃO: DESTAQUES (COM CARROSSEL) -->
-    <section class="section fade-in" id="destaques">
+    <!-- NOVA SEÇÃO: DESTAQUES (COM CARROSSEL) COM A MESMA ESTRUTURA DE "O QUE FAZER" -->
+    <section class="section fade-in white" id="destaques">
         <div class="container">
             <div class="section-heading">
                 <h2>Destaques do Hotel</h2>
                 <p>Conheça o que temos de melhor a oferecer para sua estadia.</p>
             </div>
-
             <!-- Swiper container -->
-            <div class="swiper-container destaques-carousel">
-                <!-- Additional required wrapper -->
+            <div class="swiper-container destaques-carousel swiper-hotel">
                 <div class="swiper-wrapper">
-                    <!-- Slides (usando a estrutura do seu card) -->
-                    <!-- Cada slide é um card -->
+                    <!-- Slide 1 -->
                     <div class="swiper-slide">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="assets/acomodacao.jpg" alt="Apartamento Luxo">
-                            </div>
-                            <div class="card-content">
-                                <h3 class="card-title">Acomodações de Luxo</h3>
-                                <p class="card-text">Apartamentos espaçosos com vista para a piscina e comodidades
-                                    premium para seu total conforto.</p>
-                                <a href="#acomodacoes" class="card-link">Saiba mais <i
+                        <div class="image-slide" style="display: flex; flex-direction: column; align-items: center;">
+                            <img src="assets/acomodacao.jpg" alt="Apartamento Luxo"
+                                style="width:100%; height:380px; object-fit:cover; border-radius:18px;">
+                            <div class="info-box">
+                                <span class="slide-title">Acomodações de Luxo</span>
+                                <!-- <span class="slide-description">Apartamentos espaçosos com vista para a piscina e
+                                    comodidades premium para seu total conforto.</span> -->
+                                <a href="#acomodacoes" class="slide-link">Saiba mais <i
                                         class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
+                    <!-- Slide 2 -->
                     <div class="swiper-slide">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="assets/DJI_0487.jpg" alt="Piscinas">
-                            </div>
-                            <div class="card-content">
-                                <h3 class="card-title">Área de Piscinas</h3>
-                                <p class="card-text">Piscinas climatizada, aquecida e a charmosa piscina do bosque para
-                                    momentos de lazer.</p>
-                                <a href="#lazer" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                        <div class="image-slide" style="display: flex; flex-direction: column; align-items: center;">
+                            <img src="assets/DJI_0487.jpg" alt="Piscinas"
+                                style="width:100%; height:380px; object-fit:cover; border-radius:18px;">
+                            <div class="info-box">
+                                <span class="slide-title">Área de Piscinas</span>
+                                <!-- <span class="slide-description">Piscinas climatizada, aquecida e a charmosa piscina do
+                                    bosque para momentos de lazer.</span> -->
+                                <a href="#lazer" class="slide-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
+                    <!-- Slide 3 -->
                     <div class="swiper-slide">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="assets/IMG_0094.jpg" alt="Restaurante Cinquentenário">
-                            </div>
-                            <div class="card-content">
-                                <h3 class="card-title">Gastronomia Requintada</h3>
-                                <p class="card-text">Desfrute de pratos deliciosos em nossos restaurantes com opções a
-                                    La Carte e buffet.</p>
-                                <a href="#restaurante" class="card-link">Ver cardápio <i
+                        <div class="image-slide" style="display: flex; flex-direction: column; align-items: center;">
+                            <img src="assets/IMG_0094.jpg" alt="Restaurante Cinquentenário"
+                                style="width:100%; height:380px; object-fit:cover; border-radius:18px;">
+                            <div class="info-box">
+                                <span class="slide-title">Gastronomia Requintada</span>
+                                <!-- <span class="slide-description">Desfrute de pratos deliciosos em nossos restaurantes com
+                                    opções à la carte e buffet.</span> -->
+                                <a href="#restaurante" class="slide-link">Ver cardápio <i
                                         class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
+                    <!-- Slide 4 -->
                     <div class="swiper-slide">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="assets/convencoes.jpg" alt="Centro de Convenções">
-                            </div>
-                            <div class="card-content">
-                                <h3 class="card-title">Eventos e Convenções</h3>
-                                <p class="card-text">Espaços versáteis e equipados para realizar seu evento corporativo
-                                    ou social com sucesso.</p>
-                                <a href="#convencoes" class="card-link">Saiba mais <i
+                        <div class="image-slide" style="display: flex; flex-direction: column; align-items: center;">
+                            <img src="assets/convencoes.jpg" alt="Centro de Convenções"
+                                style="width:100%; height:380px; object-fit:cover; border-radius:18px;">
+                            <div class="info-box">
+                                <span class="slide-title">Eventos e Convenções</span>
+                                <!-- <span class="slide-description">Espaços versáteis e equipados para realizar seu evento
+                                    corporativo ou social com sucesso.</span> -->
+                                <a href="#convencoes" class="slide-link">Saiba mais <i
                                         class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
+                    <!-- Slide 5 -->
                     <div class="swiper-slide">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="assets/IMG_0129.jpg" alt="Recreação">
-                            </div>
-                            <div class="card-content">
-                                <h3 class="card-title">Recreação para a Família</h3>
-                                <p class="card-text">Atividades divertidas para crianças e adultos, garantindo a
-                                    diversão de todos.</p>
-                                <a href="#lazer" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                        <div class="image-slide" style="display: flex; flex-direction: column; align-items: center;">
+                            <img src="assets/IMG_0129.jpg" alt="Recreação"
+                                style="width:100%; height:380px; object-fit:cover; border-radius:18px;">
+                            <div class="info-box">
+                                <span class="slide-title">Recreação para a Família</span>
+                                <!-- <span class="slide-description">Atividades divertidas para crianças e adultos,
+                                    garantindo a diversão de todos.</span> -->
+                                <a href="#lazer" class="slide-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
-                    <!-- Adicione mais slides conforme necessário. O carrossel funcionará com 3 ou mais slides. -->
                 </div>
-                <!-- If we need pagination (os pontinhos de navegação) -->
+                <!-- Paginação/Setas -->
                 <div class="swiper-pagination"></div>
-
-                <!-- If we need navigation buttons (as setas) -->
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
@@ -367,12 +400,8 @@
 
 
 
-
-
-
-
     <!-- NOVA SEÇÃO: PARALLAX CTA -->
-    <section class="parallax-cta fade-in">
+    <section class="parallax-cta fade-in white">
         <div class="overlay"></div> <!-- Opcional: para escurecer a imagem de fundo -->
         <div class="container">
             <h2 class="cta-title">Pronto para Relaxar?</h2>
@@ -410,17 +439,17 @@
 
 
 
+    <!-- 
 
 
 
-
-    <section class="section fade-in" id="acomodacoes">
+    <section class="section fade-in white" id="acomodacoes">
         <div class="container">
             <div class="section-heading">
                 <h2>Acomodações</h2>
                 <p>Conforto e elegância em cada detalhe</p>
             </div>
-            <div class="cards   fade-in">
+            <div class="cards   fade-in white">
                 <div class="card">
                     <div class="card-image">
                         <img src="assets/acomodacao.jpg" alt="Apartamento Standard">
@@ -450,7 +479,7 @@
         </div>
     </section>
 
-    <section class="section fade-in" id="lazer">
+    <section class="section fade-in white" id="lazer">
         <div class="container">
             <div class="section-heading">
                 <h2>Lazer & Recreação</h2>
@@ -509,7 +538,7 @@
         </div>
     </section>
 
-    <section class="section fade-in" id="restaurante">
+    <section class="section fade-in white" id="restaurante">
         <div class="container">
             <div class="section-heading">
                 <h2>Gastronomia</h2>
@@ -585,7 +614,7 @@
 
 
 
-    <section class="section fade-in" id="convencoes">
+    <section class="section fade-in white" id="convencoes">
         <div class="container">
             <div class="section-heading">
                 <h2>Centro de Convenções</h2>
@@ -656,19 +685,19 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- <section class="testimonial fade-in">
-        <div class="container">
-            <div class="testimonial-content">
-                <p class="testimonial-text">Nossa estadia no Radio Hotel foi incrível. Atendimento impecável,
-                    instalações confortáveis e a gastronomia surpreendente. Certamente voltaremos com a família!</p>
-                <p class="testimonial-author">Ana e Carlos Silva - São Paulo/SP</p>
-            </div>
-        </div>
     </section> -->
 
-    <section class="cta-section fade-in">
+    <section class="testimonial fade-in white">
+        <div class="container">
+            <div class="testimonial-content">
+                <p class="testimonial-text">“Próximo ao centro, excelente atendimento, café da manhã ótimo, trilhas
+                    formidáveis, noites agradáveis com cantores locais tanto na praça como nas poltronas do hotel.”</p>
+                <p class="testimonial-author">Celso</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section fade-in white">
         <div class="container">
             <h2 class="cta-title">Planeje suas férias especiais</h2>
             <p class="cta-text">Reserve agora e garanta as melhores tarifas e condições especiais para sua estadia no
@@ -677,83 +706,8 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container fade-in">
-            <div class="footer-content">
-                <div class="footer-column footer-about">
-                    <img src="assets/logo.png" alt="Radio Hotel Logo" class="footer-logo">
-                    <p>O Radio Hotel Resort & Convention combina conforto, elegância e hospitalidade para proporcionar
-                        momentos inesquecíveis em Serra Negra, SP.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3 class="footer-heading">Links Rápidos</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#acomodacoes">Acomodações</a></li>
-                        <li><a href="#lazer">Lazer</a></li>
-                        <li><a href="#Programação">Programação</a></li>
-                        <li><a href="#passeios">Passeios</a></li>
-                        <li><a href="#restaurante">Restaurante</a></li>
-                        <li><a href="#convencoes">Convenções</a></li>
-                        <li><a href="#contato">Contato</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3 class="footer-heading">Serviços</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Reservas Online</a></li>
-                        <li><a href="#">Day Use</a></li>
-                        <li><a href="#">Eventos Corporativos</a></li>
-                        <li><a href="#">Pacotes Temáticos</a></li>
-                        <li><a href="#">Transfer</a></li>
-                        <li><a href="#">Spa & Massagem</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3 class="footer-heading">Contato</h3>
-                    <div class="footer-contact">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Rua Cel. Pedro Penteado, 387 Centro
-                            <br>Serra Negra, SP - CEP 13930-000</span>
-                    </div>
 
-                    <div class="footer-contact">
-                        <i class="fas fa-phone-alt"></i>
-                        <span>(19) 3892.3311 | 3892.2284</span>
-                    </div>
-                    <div class="footer-contact">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>(19) 99990-3311</span>
-                    </div>
-                    <div class="footer-contact">
-                        <i class="fas fa-envelope"></i>
-                        <span>reservas@radiohotel.com.br</span>
-                    </div>
-                </div>
-                <div class="footer-column newsletter">
-                    <h3 class="footer-heading">Newsletter</h3>
-                    <p>Cadastre-se para receber nossas novidades e ofertas exclusivas:</p>
-                    <form id="newsletter-form" action="mailto:caiocgp92@gmail.com" method="GET">
-                        <input type="email" name="email" id="email" placeholder="Seu e-mail" required>
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
-                    <div class="container-word-travel">
-                        <img src="assets/icon/word-travel.png" alt="word travel" class="icon-word-travel">
-                    </div>
-                </div>
-
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 Radio Hotel Resort & Convention. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-container"></div>
 
 
     <a href="https://wa.me/55999999999" aria-label="Fale conosco no WhatsApp" class="whatsapp-fixo" target="_blank"
@@ -764,5 +718,8 @@
 
 
     <button onclick="topFunction()" id="btnTopo" title="Voltar ao topo">↑</button>
+
+
+
 
 </body>
