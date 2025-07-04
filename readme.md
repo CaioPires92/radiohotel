@@ -4,7 +4,8 @@
 [X] colocar video no hero section
 [X] tirar assento do Radio
 [] pesquisar sobre transição de email
-[] colocar algumas fotos na vertical
-[] talvez colocar video na vertical
-[] modal
+[x] modal e popup
+[] deixar modal e popup mais apresentavel
+[]
+
 

@@ -1,7 +1,0 @@
-# Ignorar arquivos específicos
-readme.md
-# Ou ignorar pastas inteiras, por exemplo:
-node_modules/
-# Outros exemplos comuns:
-*.log  # Ignora todos os arquivos com extensão .log
-temp/  # Ignora a pasta temp e tudo dentro dela
