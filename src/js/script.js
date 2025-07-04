@@ -43,12 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     reservaForm.addEventListener("submit", function (e) {
       e.preventDefault();
       const formData = new FormData(this);
-      const mensagem = `Olá! Gostaria de consultar disponibilidade:\n
-                Check-in: ${formData.get("checkin")}\n
-                Check-out: ${formData.get("checkout")}\n
-                Adultos: ${formData.get("adultos")}\n
-                Crianças: ${formData.get("criancas")}\n
-                Tipo de Quarto: ${formData.get("tipoQuarto")}`;
+      const mensagem = `Olá! Gostaria de consultar disponibilidade:\n\n                Check-in: ${formData.get("checkin")}\n\n                Check-out: ${formData.get("checkout")}\n\n                Adultos: ${formData.get("adultos")}\n\n                Crianças: ${formData.get("criancas")}\n\n                Tipo de Quarto: ${formData.get("tipoQuarto")}`;
 
       window.open(
         `https://wa.me/55999999999?text=${encodeURIComponent(mensagem)}`,
@@ -57,8 +52,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Floating icons visibility on scroll
+  const heroSection = document.getElementById('inicio');
+  const floatingPopup = document.getElementById('abrirModal');
+  const whatsappFixo = document.querySelector('.whatsapp-fixo');
 
+  if (heroSection && floatingPopup && whatsappFixo) {
+    const heroHeight = heroSection.offsetHeight;
 
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > heroHeight) {
+        floatingPopup.classList.remove('hidden-icons');
+        floatingPopup.classList.add('visible-icons');
+        whatsappFixo.classList.remove('hidden-icons');
+        whatsappFixo.classList.add('visible-icons');
+      } else {
+        floatingPopup.classList.remove('visible-icons');
+        floatingPopup.classList.add('hidden-icons');
+        whatsappFixo.classList.remove('visible-icons');
+        whatsappFixo.classList.add('hidden-icons');
+      }
+    });
+  }
 
   // Função para abrir o modal
   function openModal() {

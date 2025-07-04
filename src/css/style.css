@@ -496,10 +496,10 @@ nav {
 }
 
 .form-group {
-  flex: 1 1 200px;
-  min-width: 200px;
-  max-width: 300px;
-  /* Mantém um tamanho máximo adequado */
+  flex: 1 1 45%;
+  /* Cada campo vai ocupar 45% da largura */
+  min-width: 120px;
+  /* Garante um mínimo de largura para os campos */
 }
 
 .form-group label {
@@ -1678,4 +1678,15 @@ body.modal-open {
 .btn-submit {
   flex: 1 1 100%;
   /* O botão ainda ocupa a largura total em telas menores */
+}
+
+.hidden-icons {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.visible-icons {
+  opacity: 1;
+  visibility: visible;
 }
