@@ -1,124 +1,182 @@
-// Swiper Carousel
-document.addEventListener("DOMContentLoaded", function () {
-  document
-    .querySelectorAll(".swiper-hotel")
-    .forEach(function (swiperContainer) {
-      // Elementos de paginação e navegação relativos a este container
-      const pagination = swiperContainer.querySelector(".swiper-pagination");
-      const next = swiperContainer.querySelector(".swiper-button-next");
-      const prev = swiperContainer.querySelector(".swiper-button-prev");
+document.addEventListener("DOMContentLoaded", () => {
+  /**
+   * Main application object to encapsulate all site scripts.
+   */
+  const Site = {
+    // =========================================================================
+    // CONFIGURATION
+    // =========================================================================
+    whatsAppNumber: "55999999999", // WhatsApp number for reservations
 
-      new Swiper(swiperContainer, {
-        loop: true,
-        centeredSlides: true,
-        autoplay: { delay: 5000, disableOnInteraction: false },
-        pagination: { el: pagination, clickable: true },
-        navigation: { nextEl: next, prevEl: prev },
-        breakpoints: {
-          1024: { slidesPerView: 2, spaceBetween: -400 },
-          768: { slidesPerView: 1, spaceBetween: 20 },
-          0: { slidesPerView: 1, spaceBetween: 30 },
-        },
+    // =========================================================================
+    // STATE
+    // =========================================================================
+    modalOpenedOnScroll: false,
+
+    // =========================================================================
+    // INITIALIZATION
+    // =========================================================================
+    init() {
+      this.initSwiper();
+      this.initScrollToTop();
+      this.initReservationForm();
+      // this.initModal();
+      this.initScrollListeners();
+    },
+
+    // =========================================================================
+    // SWIPER CAROUSEL
+    // =========================================================================
+    initSwiper() {
+      document.querySelectorAll(".swiper-hotel").forEach((swiperContainer) => {
+        const pagination = swiperContainer.querySelector(".swiper-pagination");
+        const next = swiperContainer.querySelector(".swiper-button-next");
+        const prev = swiperContainer.querySelector(".swiper-button-prev");
+
+        const baseConfig = {
+          loop: true,
+          centeredSlides: true,
+          autoplay: { delay: 5000, disableOnInteraction: false },
+          pagination: { el: pagination, clickable: true },
+          navigation: { nextEl: next, prevEl: prev },
+          breakpoints: {
+            1024: { slidesPerView: 3, spaceBetween: 30 },
+            768: { slidesPerView: 2, spaceBetween: 20 },
+            0: { slidesPerView: 1, spaceBetween: 30 },
+          },
+        };
+
+        // Specific override for 'acomodacoes' swiper
+        // if (swiperContainer.classList.contains("swiper-acomodacoes")) {
+        //   Object.assign(baseConfig, {
+        //     loop: false,
+        //     centeredSlides: false,
+        //     watchOverflow: true,
+        //     breakpoints: {
+        //       1024: { slidesPerView: 3, spaceBetween: 30 },
+        //       768: { slidesPerView: 2, spaceBetween: 20 },
+        //       0: { slidesPerView: 1, spaceBetween: 30 },
+        //     },
+        //   });
+        // }
+
+        new Swiper(swiperContainer, baseConfig);
       });
-    });
+    },
 
-  // Botão Scroll Top
-  const btnTopo = document.getElementById("btnTopo");
-  if (btnTopo) {
-    window.onscroll = () => {
-      btnTopo.style.display = window.scrollY > 100 ? "block" : "none";
-    };
-    btnTopo.addEventListener("click", () =>
-      window.scrollTo({ top: 0, behavior: "smooth" }),
-    );
-  }
-
-  // Sistema de Reservas
-  const reservaForm = document.getElementById("reservaForm");
-  if (reservaForm) {
-    // Flatpickr initialization
-    flatpickr("#checkin", { dateFormat: "d/m/Y", locale: "pt" });
-    flatpickr("#checkout", { dateFormat: "d/m/Y", locale: "pt" });
-
-    reservaForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const formData = new FormData(this);
-      const mensagem = `Olá! Gostaria de consultar disponibilidade:\n\n                Check-in: ${formData.get("checkin")}\n\n                Check-out: ${formData.get("checkout")}\n\n                Adultos: ${formData.get("adultos")}\n\n                Crianças: ${formData.get("criancas")}\n\n                Tipo de Quarto: ${formData.get("tipoQuarto")}`;
-
-      window.open(
-        `https://wa.me/55999999999?text=${encodeURIComponent(mensagem)}`,
-        "_blank",
-      );
-    });
-  }
-
-  // Floating icons visibility on scroll
-  const heroSection = document.getElementById('inicio');
-  const floatingPopup = document.getElementById('abrirModal');
-  const whatsappFixo = document.querySelector('.whatsapp-fixo');
-
-  if (heroSection && floatingPopup && whatsappFixo) {
-    const heroHeight = heroSection.offsetHeight;
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > heroHeight) {
-        floatingPopup.classList.remove('hidden-icons');
-        floatingPopup.classList.add('visible-icons');
-        whatsappFixo.classList.remove('hidden-icons');
-        whatsappFixo.classList.add('visible-icons');
-      } else {
-        floatingPopup.classList.remove('visible-icons');
-        floatingPopup.classList.add('hidden-icons');
-        whatsappFixo.classList.remove('visible-icons');
-        whatsappFixo.classList.add('hidden-icons');
+    // =========================================================================
+    // SCROLL TO TOP BUTTON
+    // =========================================================================
+    initScrollToTop() {
+      const btnTopo = document.getElementById("btnTopo");
+      if (btnTopo) {
+        btnTopo.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
       }
-    });
-  }
+    },
 
-  // Função para abrir o modal
-  function openModal() {
-    document.getElementById("modal").style.display = "flex";
-  }
+    // =========================================================================
+    // RESERVATION FORM
+    // =========================================================================
+    initReservationForm() {
+      const reservaForm = document.getElementById("reservaForm");
+      if (!reservaForm) return;
 
-  // Função para fechar o modal
-  function closeModal() {
-    document.getElementById("modal").style.display = "none";
-  }
+      flatpickr("#checkin", { dateFormat: "d/m/Y", locale: "pt" });
+      flatpickr("#checkout", { dateFormat: "d/m/Y", locale: "pt" });
 
-  // Quando o botão flutuante é clicado, abre o modal
-  document.getElementById("abrirModal").addEventListener("click", openModal);
+      reservaForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const message = [
+          "Olá! Gostaria de consultar disponibilidade:",
+          `Check-in: ${formData.get("checkin")}`,
+          `Check-out: ${formData.get("checkout")}`,
+          `Adultos: ${formData.get("adultos")}`,
+          `Crianças: ${formData.get("criancas")}`,
+          `Tipo de Quarto: ${formData.get("tipoQuarto")}`,
+        ].join("\n");
 
-  // Função para abrir modal ao rolar até o meio
-  let modalOpenedOnScroll = false; // Garante que só abra uma vez
+        const whatsappUrl = `https://wa.me/${this.whatsAppNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, "_blank");
+      });
+    },
 
-  function handleScrollOpenModal() {
-    if (!modalOpenedOnScroll) {
-      const scrollY = window.scrollY || window.pageYOffset;
-      const windowHeight = window.innerHeight;
-      const docHeight = document.body.scrollHeight;
+    // =========================================================================
+    // MODAL
+    // =========================================================================
+    initModal() {
+      const modal = document.getElementById("modal");
+      const openBtn = document.getElementById("abrirModal");
+      if (!modal) return;
 
-      // Quando o scroll passa do meio
-      if (scrollY + windowHeight / 2 >= docHeight / 2) {
-        openModal();
-        modalOpenedOnScroll = true;
+      this.openModal = () => (modal.style.display = "flex");
+      this.closeModal = () => (modal.style.display = "none");
+
+      if (openBtn) {
+        openBtn.addEventListener("click", this.openModal);
       }
-    }
-  }
 
-  window.addEventListener("scroll", handleScrollOpenModal);
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) this.closeModal();
+      });
 
-  // Também fecha modal ao clicar no overlay (extra opcional)
-  document.getElementById("modal").addEventListener("click", function (e) {
-    if (e.target === this) closeModal();
-  });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") this.closeModal();
+      });
 
+      // Expose to global scope for inline `onclick` attributes in HTML
+      window.closeModal = this.closeModal;
+    },
 
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-      closeModal();  // Chama a função para fechar o modal
-    }
-  });
+    // =========================================================================
+    // SCROLL EVENT HANDLING
+    // =========================================================================
+    initScrollListeners() {
+      window.addEventListener("scroll", () => this.handleScroll());
+    },
 
-  // Expondo a função de fechar para o botão (caso esteja no escopo global)
-  window.closeModal = closeModal;
+    handleScroll() {
+      this.toggleScrollTopButton();
+      this.toggleFloatingIcons();
+      this.openModalOnScroll();
+    },
+
+    toggleScrollTopButton() {
+      const btnTopo = document.getElementById("btnTopo");
+      if (btnTopo) {
+        btnTopo.style.display = window.scrollY > 100 ? "block" : "none";
+      }
+    },
+
+    toggleFloatingIcons() {
+      const heroSection = document.getElementById("inicio");
+      const floatingPopup = document.getElementById("abrirModal");
+      const whatsappFixo = document.querySelector(".whatsapp-fixo");
+
+      if (heroSection && floatingPopup && whatsappFixo) {
+        const show = window.scrollY > heroSection.offsetHeight;
+        floatingPopup.classList.toggle("visible-icons", show);
+        floatingPopup.classList.toggle("hidden-icons", !show);
+        whatsappFixo.classList.toggle("visible-icons", show);
+        whatsappFixo.classList.toggle("hidden-icons", !show);
+      }
+    },
+
+    openModalOnScroll() {
+      if (this.modalOpenedOnScroll || !this.openModal) return;
+
+      const scrollMidPoint = document.body.scrollHeight / 2;
+      const screenMidPoint = window.scrollY + window.innerHeight / 2;
+
+      if (screenMidPoint >= scrollMidPoint) {
+        this.openModal();
+        this.modalOpenedOnScroll = true;
+      }
+    },
+  };
+
+  // Run the application
+  Site.init();
 });

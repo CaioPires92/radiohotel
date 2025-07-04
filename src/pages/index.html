@@ -51,48 +51,57 @@
   <section class="white">
     <div class="container container-reserva fade-in">
       <div class="reserva">
-        <h2>Consulte Disponibilidade</h2>
         <form id="reservaForm">
-          <div class="form-group">
-            <label for="checkin">Check-in</label>
-            <input type="text" id="checkin" class="form-control" required />
+          <div class="form-group-icon">
+            <i class="fas fa-calendar-alt"></i>
+            <div class="form-group">
+              <input type="text" id="checkin" class="form-control" placeholder="Check-in" required />
+            </div>
           </div>
-          <div class="form-group">
-            <label for="checkout">Check-out</label>
-            <input type="text" id="checkout" class="form-control" required />
+          <div class="form-group-icon">
+            <i class="fas fa-calendar-alt"></i>
+            <div class="form-group">
+              <input type="text" id="checkout" class="form-control" placeholder="Check-out" required />
+            </div>
           </div>
-          <div class="form-group">
-            <label for="adultos">Adultos</label>
-            <select id="adultos" class="form-control" required>
-              <option value="" disabled selected>Selecione</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5+</option>
-            </select>
+          <div class="form-group-icon">
+            <i class="fas fa-user"></i>
+            <div class="form-group">
+              <select id="adultos" class="form-control" required>
+                <option value="" disabled selected>Adultos</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5+</option>
+              </select>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="criancas">Crianças</label>
-            <select id="criancas" class="form-control" required>
-              <option value="" disabled selected>Selecione</option>
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4+</option>
-            </select>
+          <div class="form-group-icon">
+            <i class="fas fa-child"></i>
+            <div class="form-group">
+              <select id="criancas" class="form-control" required>
+                <option value="" disabled selected>Crianças</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4+</option>
+              </select>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="tipoQuarto">Tipo de Quarto</label>
-            <select id="tipoQuarto" class="form-control" required>
-              <option value="" disabled selected>Selecione</option>
-              <option value="Standard">Standard</option>
-              <option value="Luxo">Luxo</option>
-            </select>
+          <div class="form-group-icon">
+            <i class="fas fa-bed"></i>
+            <div class="form-group">
+              <select id="tipoQuarto" class="form-control" required>
+                <option value="" disabled selected>Tipo de Quarto</option>
+                <option value="Standard">Standard</option>
+                <option value="Luxo">Luxo</option>
+              </select>
+            </div>
           </div>
           <button type="submit" class="btn-submit">
-            Consultar Disponibilidade
+            <i class="fas fa-search"></i> Consultar
           </button>
         </form>
       </div>
@@ -274,7 +283,7 @@
         <h2>Acomodações</h2>
         <p>Eventos e experiências imperdíveis</p>
       </div>
-      <div class="swiper-container oquefazer-carousel swiper-hotel">
+      <div class="swiper-container oquefazer-carousel swiper-hotel swiper-acomodacoes">
         <div class="swiper-wrapper">
 
 
@@ -734,8 +743,8 @@
 
   <div id="footer-container"></div>
 
-  <a href="https://wa.me/55999999999" aria-label="Fale conosco no WhatsApp" class="whatsapp-fixo hidden-icons" target="_blank"
-    rel="noopener noreferrer">
+  <a href="https://wa.me/55999999999" aria-label="Fale conosco no WhatsApp" class="whatsapp-fixo hidden-icons"
+    target="_blank" rel="noopener noreferrer">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Fale conosco no WhatsApp"
       width="50" />
   </a>
