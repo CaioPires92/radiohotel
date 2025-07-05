@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       this.initSwiper();
       this.initScrollToTop();
       this.initReservationForm();
-      // this.initModal();
+      this.initModal();
       this.initScrollListeners();
     },
 
