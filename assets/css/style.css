@@ -311,7 +311,7 @@ h4 {
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-  margin: -100px auto 0;
+  margin: auto;
   max-width: 1200px;
   width: 95%;
   position: relative;
@@ -1214,7 +1214,7 @@ footer {
   padding: 100px 0;
   text-align: center;
   color: white;
-  background-image: url("../../assets/images/DJI_0281.jpg");
+  background-image: url("../images/destaques/DJI_0461.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1279,12 +1279,13 @@ footer {
 
 /* --- CTA Section --- */
 .cta-section {
-  background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.9)),
-    url("../../assets/images/destaques/DJI_0487.jpg") center/cover no-repeat fixed;
+  background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.9)), url("assets/images/destaques/0281.jpg") center/cover no-repeat fixed;
   padding: 100px 0;
   text-align: center;
   color: white;
 }
+
+
 
 .cta-title {
   font-size: 2.8rem;
