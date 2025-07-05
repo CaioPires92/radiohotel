@@ -1081,9 +1081,11 @@ footer {
 
 .oquefazer-carousel,
 .destaques-carousel {
-  width: 80%;
+  width: 100%;
   padding: 40px 0;
 }
+
+
 
 .oquefazer-carousel .swiper-wrapper,
 .destaques-carousel .swiper-wrapper {

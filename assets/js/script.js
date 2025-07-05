@@ -29,13 +29,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // =========================================================================
     initSwiper() {
       document.querySelectorAll(".swiper-hotel").forEach((swiperContainer) => {
+        const carrosséis = document.querySelectorAll(".swiper-hotel");
+
         const pagination = swiperContainer.querySelector(".swiper-pagination");
         const next = swiperContainer.querySelector(".swiper-button-next");
         const prev = swiperContainer.querySelector(".swiper-button-prev");
 
         const baseConfig = {
           loop: true,
-          centeredSlides: true,
+          centeredSlides: false,
+          slidesPerView: 'auto', /* Usar 'auto' em vez de números fixos */
           autoplay: { delay: 5000, disableOnInteraction: false },
           pagination: { el: pagination, clickable: true },
           navigation: { nextEl: next, prevEl: prev },
@@ -45,21 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
             0: { slidesPerView: 1, spaceBetween: 30 },
           },
         };
-
-        // Specific override for 'acomodacoes' swiper
-        // if (swiperContainer.classList.contains("swiper-acomodacoes")) {
-        //   Object.assign(baseConfig, {
-        //     loop: false,
-        //     centeredSlides: false,
-        //     watchOverflow: true,
-        //     breakpoints: {
-        //       1024: { slidesPerView: 3, spaceBetween: 30 },
-        //       768: { slidesPerView: 2, spaceBetween: 20 },
-        //       0: { slidesPerView: 1, spaceBetween: 30 },
-        //     },
-        //   });
-        // }
-
         new Swiper(swiperContainer, baseConfig);
       });
     },
