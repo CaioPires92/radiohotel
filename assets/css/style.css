@@ -1214,7 +1214,7 @@ footer {
   padding: 100px 0;
   text-align: center;
   color: white;
-  background-image: url("../images/destaques/DJI_0461.jpg");
+  background-image: url("/assets/images/destaques/piscina.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1279,7 +1279,7 @@ footer {
 
 /* --- CTA Section --- */
 .cta-section {
-  background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.9)), url("assets/images/destaques/0281.jpg") center/cover no-repeat fixed;
+  background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.9)), url("/assets/images/destaques/quadra.jpg") center/cover no-repeat fixed;
   padding: 100px 0;
   text-align: center;
   color: white;

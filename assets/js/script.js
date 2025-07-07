@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
     initSwiper() {
       document.querySelectorAll(".swiper-hotel").forEach((swiperContainer) => {
         const carrosséis = document.querySelectorAll(".swiper-hotel");
-
         const pagination = swiperContainer.querySelector(".swiper-pagination");
         const next = swiperContainer.querySelector(".swiper-button-next");
         const prev = swiperContainer.querySelector(".swiper-button-prev");
@@ -38,19 +37,58 @@ document.addEventListener("DOMContentLoaded", () => {
         const baseConfig = {
           loop: true,
           centeredSlides: false,
-          slidesPerView: 'auto', /* Usar 'auto' em vez de números fixos */
+          slidesPerView: 'auto',
           autoplay: { delay: 5000, disableOnInteraction: false },
           pagination: { el: pagination, clickable: true },
           navigation: { nextEl: next, prevEl: prev },
           breakpoints: {
-            1024: { slidesPerView: 3, spaceBetween: 30 },
-            768: { slidesPerView: 2, spaceBetween: 20 },
-            0: { slidesPerView: 1, spaceBetween: 30 },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+              centeredSlides: false
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+              centeredSlides: false
+            },
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 10,  // Reduzido para melhor visualização
+              centeredSlides: true,
+              effect: 'creative',  // Novo efeito para mobile
+              creativeEffect: {
+                prev: {
+                  translate: ["-120%", 0, -500],
+                  opacity: 0.5
+                },
+                next: {
+                  translate: ["120%", 0, -500],
+                  opacity: 0.5
+                }
+              }
+            }
           },
+          // Configurações comuns para todos os breakpoints
+          on: {
+            init: function () {
+              // Força redimensionamento inicial
+              this.updateSize();
+              this.updateSlides();
+            }
+          }
         };
-        new Swiper(swiperContainer, baseConfig);
+
+        const swiperInstance = new Swiper(swiperContainer, baseConfig);
+
+        // Adiciona tratamento responsivo
+        window.addEventListener('resize', () => {
+          swiperInstance.updateSize();
+          swiperInstance.updateSlides();
+        });
       });
     },
+
 
     // =========================================================================
     // SCROLL TO TOP BUTTON
