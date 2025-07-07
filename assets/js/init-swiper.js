@@ -1,4 +1,4 @@
-window.initSwipers = function() {
+window.initSwipers = function () {
   const carouselData = {
     'oque-fazer': [
       {
@@ -38,24 +38,28 @@ window.initSwipers = function() {
         title: 'Apto Standard',
         link: '#ferias',
         linkText: 'Saiba mais',
+        style: 'width: 100%; height: 380px; object-fit: cover; border-radius: 18px;',
       },
       {
         img: 'assets/images/acomodacoes/master.jpg',
         title: 'Apto Master',
         link: '#ferias',
         linkText: 'Saiba mais',
+        style: 'width: 100%; height: 380px; object-fit: cover; border-radius: 18px;',
       },
       {
         img: 'assets/images/acomodacoes/luxo.png',
         title: 'Apto Luxo',
         link: '#ferias',
         linkText: 'Saiba mais',
+        style: 'width: 100%; height: 380px; object-fit: cover; border-radius: 18px;',
       },
       {
         img: 'assets/images/acomodacoes/master2.png',
         title: 'Apto Master',
         link: '#ferias',
         linkText: 'Saiba mais',
+        style: 'width: 100%; height: 380px; object-fit: cover; border-radius: 18px;',
       },
     ],
     destaques: [
@@ -123,13 +127,15 @@ window.initSwipers = function() {
       const prev = swiperContainer.querySelector('.swiper-button-prev');
 
       const baseConfig = {
-        loop: true,
-        centeredSlides: true,
-        slidesPerView: 1,
-        autoplay: { delay: 5000, disableOnInteraction: false },
-        pagination: { el: pagination, clickable: true },
-        navigation: { nextEl: next, prevEl: prev },
-        breakpoints: {
+          loop: true,
+          centeredSlides: true,
+          slidesPerView: 1,
+          autoplay: { delay: 5000, disableOnInteraction: false },
+          pagination: { el: pagination, clickable: true },
+          navigation: { nextEl: next, prevEl: prev },
+          observer: true, // Adicionado para observar mudanças no próprio Swiper
+          observeParents: true, // Adicionado para observar mudanças nos pais do Swiper
+          breakpoints: {
           1024: {
             slidesPerView: 3,
             spaceBetween: 30,
