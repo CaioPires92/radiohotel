@@ -115,13 +115,14 @@ h4 {
 /*           4. Layout & Container          */
 /* ======================================== */
 .container {
-  width: 90%;
-  max-width: 1400px;
+  width: 90vw !important;
   margin: 0 auto;
 }
 
 .section {
-  padding: 100px 0;
+  width: 100vw;
+  padding: 70px 0;
+
 }
 
 /* ======================================== */
@@ -539,7 +540,7 @@ footer {
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 40px;
-  gap: 30px;
+
 }
 
 .footer-column {
@@ -1081,16 +1082,16 @@ footer {
 
 .oquefazer-carousel,
 .destaques-carousel {
-  width: 100%;
-  padding: 40px 0;
+  width: 90vw;
+  margin: 0 auto;
+  overflow: hidden;
+
 }
 
 
 
-.oquefazer-carousel .swiper-wrapper,
-.destaques-carousel .swiper-wrapper {
-  gap: 30px;
-}
+
+
 
 .oquefazer-carousel .swiper-slide,
 .destaques-carousel .swiper-slide {

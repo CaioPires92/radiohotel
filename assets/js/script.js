@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
   /**
    * Main application object to encapsulate all site scripts.
    */
@@ -17,78 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // INITIALIZATION
     // =========================================================================
     init() {
-      this.initSwiper();
+      window.initSwipers(); // Call the new function from init-swiper.js
       this.initScrollToTop();
       this.initReservationForm();
       this.initModal();
       this.initScrollListeners();
     },
-
-    // =========================================================================
-    // SWIPER CAROUSEL
-    // =========================================================================
-    initSwiper() {
-      document.querySelectorAll(".swiper-hotel").forEach((swiperContainer) => {
-        const carrosséis = document.querySelectorAll(".swiper-hotel");
-        const pagination = swiperContainer.querySelector(".swiper-pagination");
-        const next = swiperContainer.querySelector(".swiper-button-next");
-        const prev = swiperContainer.querySelector(".swiper-button-prev");
-
-        const baseConfig = {
-          loop: true,
-          centeredSlides: false,
-          slidesPerView: 'auto',
-          autoplay: { delay: 5000, disableOnInteraction: false },
-          pagination: { el: pagination, clickable: true },
-          navigation: { nextEl: next, prevEl: prev },
-          breakpoints: {
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-              centeredSlides: false
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-              centeredSlides: false
-            },
-            0: {
-              slidesPerView: 1,
-              spaceBetween: 10,  // Reduzido para melhor visualização
-              centeredSlides: true,
-              effect: 'creative',  // Novo efeito para mobile
-              creativeEffect: {
-                prev: {
-                  translate: ["-120%", 0, -500],
-                  opacity: 0.5
-                },
-                next: {
-                  translate: ["120%", 0, -500],
-                  opacity: 0.5
-                }
-              }
-            }
-          },
-          // Configurações comuns para todos os breakpoints
-          on: {
-            init: function () {
-              // Força redimensionamento inicial
-              this.updateSize();
-              this.updateSlides();
-            }
-          }
-        };
-
-        const swiperInstance = new Swiper(swiperContainer, baseConfig);
-
-        // Adiciona tratamento responsivo
-        window.addEventListener('resize', () => {
-          swiperInstance.updateSize();
-          swiperInstance.updateSlides();
-        });
-      });
-    },
-
 
     // =========================================================================
     // SCROLL TO TOP BUTTON

@@ -24,6 +24,7 @@
   <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <script defer src="assets/js/load-components.js"></script>
+  <script defer src="assets/js/init-swiper.js"></script>
   <script src="assets/js/script.js" defer></script>
 </head>
 
@@ -136,7 +137,7 @@
           </p>
         </div>
         <div class="about-image">
-          <img src="assets/images/destaques/piscina.jpg" alt="Radio Hotel Resort & Convention" />
+          <img src="assets/images/destaques/piscina.jpg" loading="lazy" alt="Radio Hotel Resort & Convention" />
         </div>
       </div>
     </div>
@@ -193,56 +194,6 @@
       </div>
       <div class="swiper-container oquefazer-carousel swiper-hotel">
         <div class="swiper-wrapper">
-          <!-- Pacotes Especiais -->
-          <div class="swiper-slide">
-            <div class="image-slide">
-              <img src="assets/images/programacoes/especiais.png" alt="Pacotes Especiais" />
-              <div class="info-box">
-                <span class="slide-title">Pacotes Especiais</span>
-                <a href="#pacotes" class="slide-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <!-- Passeio Bosque -->
-          <div class="swiper-slide">
-            <div class="image-slide">
-              <img src="assets/images/programacoes/bosque.png" alt="Passeio no Bosque" />
-              <div class="info-box">
-                <span class="slide-title">Passeio no Bosque</span>
-                <a href="#bosque" class="slide-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <!-- Sábado Feijoada -->
-          <div class="swiper-slide">
-            <div class="image-slide">
-              <img src="assets/images/programacoes/feijoada.png" alt="Sábado Feijoada" />
-              <div class="info-box">
-                <span class="slide-title">Sábado Feijoada</span>
-                <a href="#sabado" class="slide-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <!-- Férias Julho -->
-          <div class="swiper-slide">
-            <div class="image-slide">
-              <img src="assets/images/programacoes/julho.png" alt="Férias de Julho" />
-              <div class="info-box">
-                <span class="slide-title">Férias de Julho</span>
-                <a href="#ferias" class="slide-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <!-- Noite Italiana -->
-          <div class="swiper-slide">
-            <div class="image-slide">
-              <img src="assets/images/programacoes/italiana.png" alt="Noite Italiana" />
-              <div class="info-box">
-                <span class="slide-title">Noite Italiana</span>
-                <a href="#italiana" class="slide-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
         </div>
         <!-- Paginação/Setas -->
         <div class="swiper-pagination"></div>
@@ -260,50 +211,8 @@
         <h2>Acomodações</h2>
         <p>Eventos e experiências imperdíveis</p>
       </div>
-      <div class="swiper-container oquefazer-carousel swiper-hotel swiper-acomodacoes">
+      <div class="swiper-container oquefazer-carousel swiper-hotel">
         <div class="swiper-wrapper">
-
-
-          <div class="swiper-slide">
-            <div class="image-slide">
-              <img src="assets/images/acomodacoes/standard.png" alt="apto standard" />
-              <div class="info-box">
-                <span class="slide-title">Apto Standard</span>
-                <a href="#ferias" class="slide-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="image-slide">
-              <img src="assets/images/acomodacoes/master.jpg" alt="Apto master" />
-              <div class="info-box">
-                <span class="slide-title">Apto Master</span>
-                <a href="#ferias" class="slide-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="image-slide">
-              <img src="assets/images/acomodacoes/luxo.png" alt="Apto luxo" />
-              <div class="info-box">
-                <span class="slide-title">Apto Luxo</span>
-                <a href="#ferias" class="slide-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Férias Julho -->
-          <div class="swiper-slide">
-            <div class="image-slide">
-              <img src="assets/images/acomodacoes/master2.png" alt="Apto Standard" />
-              <div class="info-box">
-                <span class="slide-title">Apto Master</span>
-                <a href="#ferias" class="slide-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-
         </div>
         <!-- Paginação/Setas -->
         <div class="swiper-pagination"></div>
@@ -336,91 +245,6 @@
       <!-- Swiper container -->
       <div class="swiper-container destaques-carousel swiper-hotel">
         <div class="swiper-wrapper">
-          <!-- Slide 1 -->
-          <div class="swiper-slide">
-            <div class="image-slide">
-              <img src="assets/images/acomodacoes/luxo.png" alt="Apartamento Luxo" style="
-                    width: 100%;
-                    height: 380px;
-                    object-fit: cover;
-                    border-radius: 18px;
-                  " />
-              <div class="info-box">
-                <span class="slide-title">Acomodações de Luxo</span>
-                <!-- <span class="slide-description">Apartamentos espaçosos com vista para a piscina e
-                                    comodidades premium para seu total conforto.</span> -->
-                <a href="#acomodacoes" class="slide-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <!-- Slide 2 -->
-          <div class="swiper-slide">
-            <div class="image-slide">
-              <img src="assets/images/destaques/piscina.jpg" alt="Piscinas" style="
-                    width: 100%;
-                    height: 380px;
-                    object-fit: cover;
-                    border-radius: 18px;
-                  " />
-              <div class="info-box">
-                <span class="slide-title">Área de Piscinas</span>
-                <!-- <span class="slide-description">Piscinas climatizada, aquecida e a charmosa piscina do
-                                    bosque para momentos de lazer.</span> -->
-                <a href="#lazer" class="slide-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <!-- Slide 3 -->
-          <div class="swiper-slide">
-            <div class="image-slide">
-              <img src="assets/images/destaques/restaurante.jpg" alt="Restaurante Cinquentenário" style="
-                    width: 100%;
-                    height: 380px;
-                    object-fit: cover;
-                    border-radius: 18px;
-                  " />
-              <div class="info-box">
-                <span class="slide-title">Gastronomia Requintada</span>
-                <!-- <span class="slide-description">Desfrute de pratos deliciosos em nossos restaurantes com
-                                    opções à la carte e buffet.</span> -->
-                <a href="#restaurante" class="slide-link">Ver cardápio <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <!-- Slide 4 -->
-          <div class="swiper-slide">
-            <div class="image-slide">
-              <img src="assets/images/destaques/convencoes.jpg" alt="Centro de Convenções" style="
-                    width: 100%;
-                    height: 380px;
-                    object-fit: cover;
-                    border-radius: 18px;
-                  " />
-              <div class="info-box">
-                <span class="slide-title">Eventos e Convenções</span>
-                <!-- <span class="slide-description">Espaços versáteis e equipados para realizar seu evento
-                                    corporativo ou social com sucesso.</span> -->
-                <a href="#convencoes" class="slide-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <!-- Slide 5 -->
-          <div class="swiper-slide">
-            <div class="image-slide">
-              <img src="assets/images/destaques/recreacao.jpg" alt="Recreação" style="
-                    width: 100%;
-                    height: 380px;
-                    object-fit: cover;
-                    border-radius: 18px;
-                  " />
-              <div class="info-box">
-                <span class="slide-title">Recreação para a Família</span>
-                <!-- <span class="slide-description">Atividades divertidas para crianças e adultos,
-                                    garantindo a diversão de todos.</span> -->
-                <a href="#lazer" class="slide-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
         </div>
         <!-- Paginação/Setas -->
         <div class="swiper-pagination"></div>
@@ -457,7 +281,7 @@
             <div class="cards   fade-in white">
                 <div class="card">
                     <div class="card-image">
-                        <img src="assets/images/acomodacao.jpg" alt="Apartamento Standard">
+                        <img src="assets/images/acomodacao.jpg" loading="lazy" alt="Apartamento Standard">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Apartamento Standard</h3>
@@ -469,7 +293,7 @@
 
                 <div class="card">
                     <div class="card-image">
-                        <img src="assets/images/acomodacao.jpg" alt="Apartamento Luxo">
+                        <img src="assets/images/acomodacao.jpg" loading="lazy" alt="Apartamento Luxo">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Apartamento Luxo</h3>
@@ -493,7 +317,7 @@
             <div class="cards">
                 <div class="card">
                     <div class="card-image">
-                        <img src="assets/images/DJI_0487.jpg" alt="Piscinas">
+                        <img src="assets/images/DJI_0487.jpg" loading="lazy" alt="Piscinas">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Piscinas</h3>
@@ -506,7 +330,7 @@
                 </div>
                 <div class="card card-middle">
                     <div class="card-image">
-                        <img src="assets/images/DJI_0461.jpg" alt="Esportes">
+                        <img src="assets/images/DJI_0461.jpg" loading="lazy" alt="Esportes">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Esportes</h3>
@@ -530,7 +354,7 @@
 
                 <div class="card">
                     <div class="card-image">
-                        <img src="assets/images/IMG_0129.jpg" alt="Recreação">
+                        <img src="assets/images/IMG_0129.jpg" loading="lazy" alt="Recreação">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Recreação</h3>
@@ -552,7 +376,7 @@
             <div class="cards">
                 <div class="card">
                     <div class="card-image">
-                        <img src="assets/images/IMG_0094.jpg" alt="Restaurante Principal">
+                        <img src="assets/images/IMG_0094.jpg" loading="lazy" alt="Restaurante Principal">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Restaurante Cinquentenário</h3>
@@ -565,7 +389,7 @@
                 </div>
                 <div class="card">
                     <div class="card-image">
-                        <img src="assets/images/IMG_0092.jpg" alt="Café e Bistrô">
+                        <img src="assets/images/IMG_0092.jpg" loading="lazy" alt="Café e Bistrô">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Restaurante Paradiso</h3>
@@ -577,7 +401,7 @@
                 </div>
                 <div class="card">
                     <div class="card-image">
-                        <img src="assets/images/IMG_0146.jpg" alt="Bar da Piscina">
+                        <img src="assets/images/IMG_0146.jpg" loading="lazy" alt="Bar da Piscina">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Bar da Piscina</h3>
@@ -628,7 +452,7 @@
             <div class="cards">
                 <div class="card">
                     <div class="card-image">
-                        <img src="assets/images/convencoes.jpg" alt="Salão de Eventos">
+                        <img src="assets/images/convencoes.jpg" loading="lazy" alt="Salão de Eventos">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Salão de Eventos</h3>
@@ -667,7 +491,7 @@
 
                 <div class="card">
                     <div class="card-image">
-                        <img src="assets/images/convencoes.jpg" alt="Salas de Reunião">
+                        <img src="assets/images/convencoes.jpg" loading="lazy" alt="Salas de Reunião">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Salas de Reunião</h3>
@@ -678,7 +502,7 @@
                 </div>
                 <div class="card">
                     <div class="card-image">
-                        <img src="assets/images/convencoes.jpg" alt="Business Center">
+                        <img src="assets/images/convencoes.jpg" loading="lazy" alt="Business Center">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Business Center</h3>
@@ -720,8 +544,8 @@
 
   <a href="https://wa.me/55999999999" aria-label="Fale conosco no WhatsApp" class="whatsapp-fixo hidden-icons"
     target="_blank" rel="noopener noreferrer">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Fale conosco no WhatsApp"
-      width="50" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" loading="lazy"
+      alt="Fale conosco no WhatsApp" width="50" />
   </a>
 
   <button onclick="topFunction()" id="btnTopo" title="Voltar ao topo">
