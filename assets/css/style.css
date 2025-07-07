@@ -1131,6 +1131,20 @@ footer {
   border-bottom-color: var(--secondary);
 }
 
+@media (max-width: 768px) {
+  .oquefazer-carousel .image-slide:hover,
+  .destaques-carousel .image-slide:hover {
+    transform: none;
+    box-shadow: none;
+    border-bottom-color: transparent;
+  }
+
+  .oquefazer-carousel .image-slide:hover img,
+  .destaques-carousel .image-slide:hover img {
+    transform: none;
+  }
+}
+
 .oquefazer-carousel .image-slide:hover img,
 .destaques-carousel .image-slide:hover img {
   transform: scale(1.1);

@@ -150,17 +150,7 @@ window.initSwipers = function () {
             slidesPerView: 1,
             spaceBetween: 10, // Reduzido para melhor visualização
             centeredSlides: true,
-            effect: 'creative', // Novo efeito para mobile
-            creativeEffect: {
-              prev: {
-                translate: ['-120%', 0, -500],
-                opacity: 0.5,
-              },
-              next: {
-                translate: ['120%', 0, -500],
-                opacity: 0.5,
-              },
-            },
+            
           },
         },
         // Configurações comuns para todos os breakpoints
