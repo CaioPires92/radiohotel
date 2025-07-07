@@ -1,3 +1,7 @@
+[] foto apto luxo não carrega no card 
+[] por algum motivo destaques do hotel estão menores
+[] programações estão maiores
+
 [] centralizar cards no mobile
 [] centralizar menu hamburguer e logo no mobile
 
@@ -30,3 +34,7 @@ vale da cachoeira
 
 Apto Luxo
 Apto Sta
+
+
+
+
