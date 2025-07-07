@@ -1196,6 +1196,17 @@ footer {
   color: var(--secondary);
 }
 
+/* Ajustes para mover as setas do Swiper para dentro */
+.swiper-button-prev {
+  left: 40px !important;
+  /* Ajusta a posição da seta esquerda */
+}
+
+.swiper-button-next {
+  right: 50px !important;
+  /* Ajusta a posição da seta direita */
+}
+
 .oquefazer-carousel .swiper-pagination-bullet,
 .destaques-carousel .swiper-pagination-bullet {
   background: var(--primary);
