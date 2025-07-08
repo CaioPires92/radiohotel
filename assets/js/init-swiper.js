@@ -61,6 +61,34 @@ window.initSwipers = function () {
         linkText: 'Saiba mais',
         style: 'width: 100%; height: 380px; object-fit: cover; border-radius: 18px;',
       },
+      {
+        img: 'assets/images/acomodacoes/standard.png',
+        title: 'Apto Standard',
+        link: '#ferias',
+        linkText: 'Saiba mais',
+        style: 'width: 100%; height: 380px; object-fit: cover; border-radius: 18px;',
+      },
+      {
+        img: 'assets/images/acomodacoes/master.jpg',
+        title: 'Apto Master',
+        link: '#ferias',
+        linkText: 'Saiba mais',
+        style: 'width: 100%; height: 380px; object-fit: cover; border-radius: 18px;',
+      },
+      {
+        img: 'assets/images/acomodacoes/luxo.png',
+        title: 'Apto Luxo',
+        link: '#ferias',
+        linkText: 'Saiba mais',
+        style: 'width: 100%; height: 380px; object-fit: cover; border-radius: 18px;',
+      },
+      {
+        img: 'assets/images/acomodacoes/master2.png',
+        title: 'Apto Master',
+        link: '#ferias',
+        linkText: 'Saiba mais',
+        style: 'width: 100%; height: 380px; object-fit: cover; border-radius: 18px;',
+      },
     ],
     destaques: [
       {
@@ -156,26 +184,9 @@ window.initSwipers = function () {
           },
         },
       };
-      // Ajuste dinâmico: Desativar loop e ajustar slidesPerView se houver poucos slides
-      const slidesCount = carouselData[key].length;
-      if (slidesCount < 5) {
-        baseConfig.loop = false; // Desativa o loop para evitar espaços em branco
-        baseConfig.centeredSlides = false; // Desativa o centralizado para evitar espaços em branco (global)
-
-        // Ajusta slidesPerView e centeredSlides nos breakpoints para não exceder o número de slides
-        if (baseConfig.breakpoints[1024]) {
-          baseConfig.breakpoints[1024].slidesPerView = Math.min(3, slidesCount);
-          baseConfig.breakpoints[1024].centeredSlides = false; // Explicitly set for breakpoint
-        }
-        if (baseConfig.breakpoints[768]) {
-          baseConfig.breakpoints[768].slidesPerView = Math.min(2, slidesCount);
-          baseConfig.breakpoints[768].centeredSlides = false; // Explicitly set for breakpoint
-        }
-        if (baseConfig.breakpoints[0]) {
-          baseConfig.breakpoints[0].slidesPerView = Math.min(1, slidesCount); // Garante que não exceda 1 para mobile
-          baseConfig.breakpoints[0].centeredSlides = false; // Explicitly set for breakpoint
-        }
-      }
+      
+      // Removida a duplicação da inicialização do Swiper
+      
       // Removida a duplicação da inicialização do Swiper
       const swiperInstance = new Swiper(swiperContainer, baseConfig);
       // Força a atualização para corrigir problemas de layout na inicialização
