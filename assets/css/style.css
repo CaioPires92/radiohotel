@@ -1471,8 +1471,146 @@ footer {
     /* Two columns on larger screens */
   }
 
-  #fullReservationForm .btn-submit {
-    grid-column: span 2;
-    /* Button spans both columns */
   }
+
+/* Gallery Styles */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
 }
+
+.gallery-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.gallery-item h3 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.gallery-item p {
+  padding: 0 1.5rem 1.5rem;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Acomodações Grid */
+.acomodacoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.acomodacao-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.acomodacao-card:hover {
+  transform: translateY(-5px);
+}
+
+.acomodacao-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.acomodacao-card h3 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.acomodacao-card p {
+  padding: 0 1.5rem 1.5rem;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Gallery Modal */
+#galleryModal .modal {
+  max-width: 800px;
+}
+
+#gallerySwiper {
+  width: 100%;
+  height: 500px;
+}
+
+#gallerySwiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#galleryModal .modal-body {
+  overflow: hidden;
+}
+
+/* Hero Small */
+.hero-small {
+  height: 40vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-image: url("../images/acomodacoes/master.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.hero-small .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-small .hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-small h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+#acomodacoes-page {
+  margin-top: -150px;
+  position: relative;
+  z-index: 2;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+}
+
+
+

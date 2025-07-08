@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acomodações - Radio Hotel Resort & Convention</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-..." crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+  <link rel="icon" href="assets/images/icon/faviconV2.png" type="image/x-icon" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsivo.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="assets/js/load-components.js" defer></script>
+  <script src="assets/js/script.js" defer></script>
+  <script src="assets/js/acomodacoes.js" defer></script>
+</head>
+
+<body>
+  <div id="header-container"></div>
+
+  <section class="hero-small">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      
+    </div>
+  </section>
+
+  <section class="section fade-in white" id="acomodacoes-page">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Nossas Acomodações</h2>
+        <p>Conforto e elegância para sua estadia.</p>
+      </div>
+      <div class="acomodacoes-grid">
+        <div class="acomodacao-card" data-acomodacao="standard">
+          <img src="assets/images/acomodacoes/standard.png" loading="lazy" alt="Apto Standard">
+          <h3>Apto Standard</h3>
+          <p>Ideal para casais ou pequenas famílias, oferece conforto e praticidade.</p>
+        </div>
+        <div class="acomodacao-card" data-acomodacao="master">
+          <img src="assets/images/acomodacoes/master.jpg" loading="lazy" alt="Apto Master">
+          <h3>Apto Master</h3>
+          <p>Espaço amplo com vista privilegiada, perfeito para uma experiência superior.</p>
+        </div>
+        <div class="acomodacao-card" data-acomodacao="luxo">
+          <img src="assets/images/acomodacoes/luxo.png" loading="lazy" alt="Apto Luxo">
+          <h3>Apto Luxo</h3>
+          <p>Requinte e sofisticação em cada detalhe, para os hóspedes mais exigentes.</p>
+        </div>
+        <div class="acomodacao-card" data-acomodacao="master2">
+          <img src="assets/images/acomodacoes/master2.png" loading="lazy" alt="Apto Master">
+          <h3>Apto Master</h3>
+          <p>Espaço amplo com vista privilegiada, perfeito para uma experiência superior.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-container"></div>
+
+  <!-- Modal da Galeria -->
+  <div class="modal-overlay" id="galleryModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title" id="galleryModalTitle">Galeria de Fotos</h3>
+        <button class="modal-close" aria-label="Fechar" onclick="closeGalleryModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="swiper-container" id="gallerySwiper">
+          <div class="swiper-wrapper"></div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
