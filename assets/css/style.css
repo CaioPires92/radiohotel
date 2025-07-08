@@ -210,17 +210,28 @@ h4 {
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
   margin: auto;
   max-width: 1200px;
-  width: 95%;
+  width: 100%;
   position: relative;
   z-index: 10;
   border: 1px solid #e5e7eb;
+  text-align: center;
 }
+
+
+
+input[placeholder="Check-out"] {
+  margin-left: 4px;
+}
+
+
 
 #reservaForm {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1.5rem;
+  gap: 1rem;
   align-items: center;
+  text-align: center;
+
 }
 
 .form-group-icon {
