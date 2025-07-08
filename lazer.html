@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lazer - Radio Hotel Resort & Convention</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-..." crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+  <link rel="icon" href="assets/images/icon/faviconV2.png" type="image/x-icon" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsivo.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="assets/js/load-components.js" defer></script>
+  <script src="assets/js/script.js" defer></script>
+  <script src="assets/js/lazer.js" defer></script>
+</head>
+
+<body>
+  <div id="header-container"></div>
+
+  <section class="hero-small">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      
+    </div>
+  </section>
+
+  <section class="section fade-in white" id="lazer-page">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Áreas de Lazer</h2>
+        <p>Diversão e relaxamento para toda a família.</p>
+      </div>
+      <div class="lazer-grid">
+        <div class="lazer-card" data-lazer="piscina">
+          <img src="assets/images/destaques/piscina.jpg" loading="lazy" alt="Piscina">
+          <h3>Piscina</h3>
+          <p>Nossas piscinas são o lugar perfeito para se refrescar e relaxar sob o sol.</p>
+        </div>
+        <div class="lazer-card" data-lazer="quadra">
+          <img src="assets/images/destaques/quadra.jpg" loading="lazy" alt="Quadra Esportiva">
+          <h3>Quadra Esportiva</h3>
+          <p>Para os amantes de esportes, nossa quadra oferece diversão garantida.</p>
+        </div>
+        <div class="lazer-card" data-lazer="recreacao">
+          <img src="assets/images/destaques/recreacao.jpg" loading="lazy" alt="Recreação Infantil">
+          <h3>Recreação Infantil</h3>
+          <p>Atividades divertidas e seguras para as crianças, com monitores especializados.</p>
+        </div>
+        <div class="lazer-card" data-lazer="bar">
+          <img src="assets/images/destaques/bar.jpg" loading="lazy" alt="Bar da Piscina">
+          <h3>Bar da Piscina</h3>
+          <p>Desfrute de drinks e petiscos à beira da piscina, com um ambiente descontraído.</p>
+        </div>
+        <div class="lazer-card" data-lazer="restaurante">
+          <img src="assets/images/destaques/restaurante.jpg" loading="lazy" alt="Restaurante">
+          <h3>Restaurante</h3>
+          <p>Uma experiência gastronômica completa com pratos deliciosos para todos os gostos.</p>
+        </div>
+        <div class="lazer-card" data-lazer="convencoes">
+          <img src="assets/images/destaques/convencoes.jpg" loading="lazy" alt="Centro de Convenções">
+          <h3>Centro de Convenções</h3>
+          <p>Espaços modernos e equipados para eventos, reuniões e conferências.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-in white" id="lazer-map-section">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Localização das Áreas de Lazer</h2>
+        <p>Passe o mouse sobre os itens da lista para ver a localização no mapa.</p>
+      </div>
+      <div class="lazer-map-container">
+        <div class="lazer-options">
+          <div class="lazer-option-item" data-location-id="piscina" data-main-image="assets/images/destaques/piscina.jpg">
+            <h3>Piscina Principal</h3>
+            <p>Nossas piscinas são o lugar perfeito para se refrescar e relaxar sob o sol.</p>
+          </div>
+          <div class="lazer-option-item" data-location-id="quadra" data-main-image="assets/images/destaques/quadra.jpg">
+            <h3>Quadra Esportiva</h3>
+            <p>Para os amantes de esportes, nossa quadra oferece diversão garantida.</p>
+          </div>
+          <div class="lazer-option-item" data-location-id="recreacao" data-main-image="assets/images/destaques/recreacao.jpg">
+            <h3>Recreação Infantil</h3>
+            <p>Atividades divertidas e seguras para as crianças, com monitores especializados.</p>
+          </div>
+          <div class="lazer-option-item" data-location-id="bar" data-main-image="assets/images/destaques/bar.jpg">
+            <h3>Bar da Piscina</h3>
+            <p>Desfrute de drinks e petiscos à beira da piscina, com um ambiente descontraído.</p>
+          </div>
+          <div class="lazer-option-item" data-location-id="restaurante" data-main-image="assets/images/destaques/restaurante.jpg">
+            <h3>Restaurante</h3>
+            <p>Uma experiência gastronômica completa com pratos deliciosos para todos os gostos.</p>
+          </div>
+          <div class="lazer-option-item" data-location-id="convencoes" data-main-image="assets/images/destaques/convencoes.jpg">
+            <h3>Centro de Convenções</h3>
+            <p>Espaços modernos e equipados para eventos, reuniões e conferências.</p>
+          </div>
+        </div>
+        <div class="lazer-map-display">
+          <img id="lazer-main-image" src="assets/images/destaques/piscina.jpg" alt="Imagem de Lazer" class="lazer-display-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-container"></div>
+
+  <div id="footer-container"></div>
+
+  <!-- Modal da Galeria -->
+  <div class="modal-overlay" id="galleryModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title" id="galleryModalTitle">Galeria de Fotos</h3>
+        <button class="modal-close" aria-label="Fechar" onclick="closeGalleryModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="swiper-container" id="gallerySwiper">
+          <div class="swiper-wrapper"></div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

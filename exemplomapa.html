@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Exemplo de Mapa Interativo com Lista</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS do Leaflet (necessário para o mapa) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <!-- JavaScript do Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <!-- Estilos para a página -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            /* Evita rolagem da página inteira */
+        }
+
+        .app-container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 30%;
+            max-width: 350px;
+            background-color: #f8fafc;
+            border-right: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .sidebar-header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 0;
+        }
+
+        .sidebar-header p {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 0.25rem;
+        }
+
+        .locations-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            overflow-y: auto;
+            /* Adiciona rolagem se a lista for grande */
+            flex-grow: 1;
+        }
+
+        .locations-list li {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            border-bottom: 1px solid #e2e8f0;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .locations-list li:hover {
+            background-color: #f1f5f9;
+        }
+
+        /* Classe para destacar o item ativo */
+        .locations-list li.active {
+            background-color: #0ea5e9;
+            color: white;
+            font-weight: 500;
+        }
+
+        .map-container {
+            width: 70%;
+            height: 100%;
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            .app-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                max-width: none;
+                height: 40vh;
+                /* 40% da altura da tela */
+            }
+
+            .map-container {
+                width: 100%;
+                height: 60vh;
+                /* 60% da altura da tela */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Barra lateral com a lista de locais -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>Pontos Turísticos</h1>
+                <p>Passe o mouse para explorar</p>
+            </div>
+            <ul id="locations-list" class="locations-list"></ul>
+        </aside>
+
+        <!-- O contêiner do mapa -->
+        <main id="map" class="map-container"></main>
+    </div>
+
+
+    <script>
+        // 1. DADOS DOS LOCAIS (poderiam vir de uma API)
+        const locations = [
+            { id: 1, name: 'Cristo Redentor, RJ', lat: -22.9519, lng: -43.2105, zoom: 15 },
+            { id: 2, name: 'Cataratas do Iguaçu, PR', lat: -25.6953, lng: -54.4367, zoom: 14 },
+            { id: 3, name: 'Pelourinho, BA', lat: -12.9716, lng: -38.5093, zoom: 16 },
+            { id: 4, name: 'Teatro Amazonas, AM', lat: -3.1302, lng: -60.0230, zoom: 17 },
+            { id: 5, name: 'Parque Ibirapuera, SP', lat: -23.5882, lng: -46.6579, zoom: 15 }
+        ];
+
+        // 2. INICIALIZAÇÃO DO MAPA
+        // Centraliza o mapa em uma visão geral do Brasil.
+        const map = L.map('map').setView([-14.2350, -51.9253], 4);
+
+        // Adiciona a camada de mapa (os "azulejos" visuais) do OpenStreetMap.
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // 3. ADICIONAR MARCADORES E CONSTRUIR A LISTA
+        const markers = {}; // Objeto para guardar as referências dos marcadores
+        const listElement = document.getElementById('locations-list');
+
+        locations.forEach(location => {
+            // Adiciona o marcador (pin) no mapa para cada local.
+            const marker = L.marker([location.lat, location.lng]).addTo(map)
+                .bindPopup(`<b>${location.name}</b>`); // O popup que abre ao clicar
+
+            // Guarda a referência do marcador usando o ID do local como chave.
+            markers[location.id] = marker;
+
+            // Cria o item (<li>) para a lista na lateral.
+            const li = document.createElement('li');
+            li.innerHTML = location.name;
+            li.dataset.locationId = location.id; // Conexão entre a lista e o mapa!
+            listElement.appendChild(li);
+
+            // 4. A MÁGICA: ADICIONAR OS EVENTOS DE MOUSE
+            // Evento para quando o mouse entra na área do item da lista.
+            li.addEventListener('mouseover', function () {
+                const locationId = this.dataset.locationId;
+                const targetLocation = locations.find(loc => loc.id == locationId);
+                const targetMarker = markers[locationId];
+
+                // Centraliza o mapa na localização do marcador com uma animação suave.
+                map.flyTo([targetLocation.lat, targetLocation.lng], targetLocation.zoom);
+
+                // Abre o popup do marcador correspondente.
+                targetMarker.openPopup();
+
+                // Adiciona uma classe para destacar o item na lista.
+                this.classList.add('active');
+            });
+
+            // Evento para quando o mouse sai da área do item da lista.
+            li.addEventListener('mouseout', function () {
+                const locationId = this.dataset.locationId;
+                const targetMarker = markers[locationId];
+
+                // Fecha o popup do marcador.
+                targetMarker.closePopup();
+
+                // Remove a classe de destaque.
+                this.classList.remove('active');
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

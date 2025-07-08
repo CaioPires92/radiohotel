@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programações - Radio Hotel Resort & Convention</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-..." crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+  <link rel="icon" href="assets/images/icon/faviconV2.png" type="image/x-icon" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsivo.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="assets/js/load-components.js" defer></script>
+  <script src="assets/js/script.js" defer></script>
+  <script src="assets/js/programacoes.js" defer></script>
+</head>
+
+<body>
+  <div id="header-container"></div>
+
+  <section class="hero-small">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      
+    </div>
+  </section>
+
+  <section class="section fade-in white" id="programacoes-page">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Nossas Programações</h2>
+        <p>Eventos e atividades especiais para sua diversão.</p>
+      </div>
+      <div class="programacoes-grid">
+        <div class="programacao-card" data-programacao="julho">
+          <img src="assets/images/programacoes/julho.png" loading="lazy" alt="Férias de Julho">
+          <h3>Férias de Julho</h3>
+          <p>Programação especial com atividades para toda a família durante o mês de julho.</p>
+        </div>
+        <div class="programacao-card" data-programacao="feijoada">
+          <img src="assets/images/programacoes/feijoada.png" loading="lazy" alt="Feijoada">
+          <h3>Feijoada Completa</h3>
+          <p>Deliciosa feijoada aos sábados, com música ao vivo e ambiente descontraído.</p>
+        </div>
+        <div class="programacao-card" data-programacao="italiana">
+          <img src="assets/images/programacoes/italiana.png" loading="lazy" alt="Noite Italiana">
+          <h3>Noite Italiana</h3>
+          <p>Sabores da Itália em um jantar temático com massas frescas e vinhos selecionados.</p>
+        </div>
+        <div class="programacao-card" data-programacao="bosque">
+          <img src="assets/images/programacoes/bosque.png" loading="lazy" alt="Trilha no Bosque">
+          <h3>Trilha no Bosque</h3>
+          <p>Aventure-se em nossas trilhas ecológicas e descubra a natureza exuberante.</p>
+        </div>
+        <div class="programacao-card" data-programacao="especiais">
+          <img src="assets/images/programacoes/especiais.png" loading="lazy" alt="Eventos Especiais">
+          <h3>Eventos Especiais</h3>
+          <p>Fique por dentro de nossos eventos sazonais e celebrações exclusivas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-container"></div>
+
+  <!-- Modal da Galeria -->
+  <div class="modal-overlay" id="galleryModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title" id="galleryModalTitle">Galeria de Fotos</h3>
+        <button class="modal-close" aria-label="Fechar" onclick="closeGalleryModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="swiper-container" id="gallerySwiper">
+          <div class="swiper-wrapper"></div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
