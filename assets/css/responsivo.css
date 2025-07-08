@@ -166,12 +166,11 @@
 
   .swiper {
     width: 100%;
-    padding-inline: 20px;
   }
 
 
   .swiper-slide {
-    width: 85% !important;
+    width: 100% !important;
     /* Largura reduzida */
     transform: scale(0.9);
     /* Diminuição visual */

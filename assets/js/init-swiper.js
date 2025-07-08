@@ -148,7 +148,7 @@ window.initSwipers = function () {
           },
           0: {
             slidesPerView: 1,
-            spaceBetween: 10, // Reduzido para melhor visualização
+            
             centeredSlides: true,
             
           },
