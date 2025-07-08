@@ -20,7 +20,7 @@ window.addEventListener("load", () => {
       window.initSwipers(); // Call the new function from init-swiper.js
       this.initScrollToTop();
       this.initReservationForm();
-      this.initModal();
+      // this.initModal();
       this.initScrollListeners();
     },
 

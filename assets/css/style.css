@@ -350,8 +350,7 @@ h4 {
 
 .form-control {
   width: 100%;
-  padding: 14px 20px 14px 45px;
-  /* Adjusted padding for better placeholder visibility */
+  padding: 20px 40px 20px 10px;
   border: 1px solid #d1d5db;
   border-radius: 8px;
   font-family: "Open Sans", sans-serif;
@@ -360,9 +359,9 @@ h4 {
   background-color: #f9fafb;
   transition: all 0.3s ease;
   -webkit-appearance: none;
-  /* Removes default select styling */
   -moz-appearance: none;
   appearance: none;
+  text-align: center;
 }
 
 .form-control::placeholder {
@@ -1132,6 +1131,7 @@ footer {
 }
 
 @media (max-width: 768px) {
+
   .oquefazer-carousel .image-slide:hover,
   .destaques-carousel .image-slide:hover {
     transform: none;
