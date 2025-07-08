@@ -1223,8 +1223,8 @@ footer {
 }
 
 .cta-btn {
-  background-color: var(--secondary);
-  color: var(--dark);
+  background-color: var(--primary);
+  color: var(--light);
   font-weight: 700;
   padding: 15px 35px;
   border-radius: 5px;
@@ -1236,8 +1236,20 @@ footer {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+.cta-btn:nth-child(3) {
+  background-color: var(--secondary);
+  color: var(--dark);
+  margin-left: 20px;
+}
+
+
+.cta-btn:nth-child(3):hover {
+  background-color: var(--light);
+  color: var(--primary);
+}
+
 .cta-btn:hover {
-  background-color: white;
+  background-color: var(--secondary);
   color: var(--primary);
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
@@ -1379,4 +1391,88 @@ footer {
 .visible-icons {
   opacity: 1;
   visibility: visible;
+}
+
+/* New Reservation Modal Styles */
+#reservationModal .modal {
+  max-width: 600px;
+  /* Larger for more form fields */
+}
+
+#fullReservationForm {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+#fullReservationForm .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-align: left;
+}
+
+#fullReservationForm .form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--text);
+  background-color: #f9fafb;
+  transition: all 0.3s ease;
+  text-align: left;
+  /* Align text left for input fields */
+}
+
+#fullReservationForm .form-control:focus {
+  outline: none;
+  border-color: var(--secondary);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(192, 160, 96, 0.2);
+}
+
+#fullReservationForm select.form-control {
+  background-position: right 10px center;
+}
+
+#fullReservationForm .btn-submit {
+  width: auto;
+  margin-top: 1rem;
+  grid-column: auto;
+  /* Reset grid-column for modal button */
+}
+
+/* Styles for dynamically added child age inputs */
+.child-age-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+}
+
+.child-age-input-group label {
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.child-age-input-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+  #fullReservationForm {
+    grid-template-columns: 1fr 1fr;
+    /* Two columns on larger screens */
+  }
+
+  #fullReservationForm .btn-submit {
+    grid-column: span 2;
+    /* Button spans both columns */
+  }
 }

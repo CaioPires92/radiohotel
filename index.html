@@ -184,6 +184,71 @@
     </div>
   </div>
 
+  <!-- Novo Modal de Reserva -->
+  <div class="modal-overlay" id="reservationModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Faça sua Reserva</h3>
+        <button class="modal-close" aria-label="Fechar" onclick="closeReservationModal()">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="fullReservationForm">
+          <div class="form-group">
+            <label for="modalCheckin">Check-in:</label>
+            <input type="text" id="modalCheckin" class="form-control" placeholder="Check-in" required />
+          </div>
+          <div class="form-group">
+            <label for="modalCheckout">Check-out:</label>
+            <input type="text" id="modalCheckout" class="form-control" placeholder="Check-out" required />
+          </div>
+          <div class="form-group">
+            <label for="modalAdultos">Adultos:</label>
+            <select id="modalAdultos" class="form-control" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="modalCriancas">Crianças:</label>
+            <select id="modalCriancas" class="form-control" required>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4+</option>
+            </select>
+          </div>
+          <div id="childAgeInputs" class="form-group"></div>
+          <div class="form-group">
+            <label for="modalTipoQuarto">Tipo de Quarto:</label>
+            <select id="modalTipoQuarto" class="form-control" required>
+              <option value="Standard">Standard</option>
+              <option value="Luxo">Luxo</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="modalNome">Nome Completo:</label>
+            <input type="text" id="modalNome" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label for="modalEmail">Email:</label>
+            <input type="email" id="modalEmail" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label for="modalTelefone">Telefone:</label>
+            <input type="tel" id="modalTelefone" class="form-control" />
+          </div>
+          <button type="submit" class="btn-submit">Enviar Reserva</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
 
 
 
