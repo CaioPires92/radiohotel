@@ -1079,8 +1079,8 @@ footer {
   background-color: var(--light);
 }
 
-.oquefazer-carousel,
-.destaques-carousel {
+
+.carousel {
   width: 90vw;
   margin: 0 auto;
   overflow: hidden;
@@ -1092,16 +1092,16 @@ footer {
 
 
 
-.oquefazer-carousel .swiper-slide,
-.destaques-carousel .swiper-slide {
+
+.carousel .swiper-slide {
   display: flex;
   justify-content: center;
   height: auto;
   margin-bottom: 16px;
 }
 
-.oquefazer-carousel .image-slide,
-.destaques-carousel .image-slide {
+
+.carousel .image-slide {
   width: 100%;
   max-width: 400px;
   display: flex;
@@ -1113,8 +1113,8 @@ footer {
   overflow: hidden;
 }
 
-.oquefazer-carousel .image-slide img,
-.destaques-carousel .image-slide img {
+
+.carousel .image-slide img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover;
@@ -1123,8 +1123,8 @@ footer {
   transition: transform 0.35s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.3s;
 }
 
-.oquefazer-carousel .image-slide:hover,
-.destaques-carousel .image-slide:hover {
+
+.carousel .image-slide:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
   border-bottom-color: var(--secondary);
@@ -1132,26 +1132,25 @@ footer {
 
 @media (max-width: 768px) {
 
-  .oquefazer-carousel .image-slide:hover,
-  .destaques-carousel .image-slide:hover {
+  .carousel .image-slide:hover {
     transform: none;
     box-shadow: none;
     border-bottom-color: transparent;
   }
 
-  .oquefazer-carousel .image-slide:hover img,
-  .destaques-carousel .image-slide:hover img {
+
+  .carousel .image-slide:hover img {
     transform: none;
   }
 }
 
-.oquefazer-carousel .image-slide:hover img,
-.destaques-carousel .image-slide:hover img {
+
+.carousel .image-slide:hover img {
   transform: scale(1.1);
 }
 
-.oquefazer-carousel .info-box,
-.destaques-carousel .info-box {
+
+.carousel .info-box {
   width: 100%;
   background: white;
   margin-top: 18px;
@@ -1165,21 +1164,21 @@ footer {
   transition: transform 0.3s;
 }
 
-.oquefazer-carousel .info-box:hover,
-.destaques-carousel .info-box:hover {
+
+.carousel .info-box:hover {
   transform: scaleX(1.05);
 }
 
-.oquefazer-carousel .slide-title,
-.destaques-carousel .slide-title {
+
+.carousel .slide-title {
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--primary);
   margin-bottom: 7px;
 }
 
-.oquefazer-carousel .slide-link,
-.destaques-carousel .slide-link {
+
+.carousel .slide-link {
   color: var(--secondary);
   font-weight: 500;
   font-size: 1rem;
@@ -1190,23 +1189,21 @@ footer {
   gap: 6px;
 }
 
-.oquefazer-carousel .slide-link:hover,
-.destaques-carousel .slide-link:hover {
+
+.carousel .slide-link:hover {
   color: var(--primary);
 }
 
-.oquefazer-carousel .swiper-button-next,
-.oquefazer-carousel .swiper-button-prev,
-.destaques-carousel .swiper-button-next,
-.destaques-carousel .swiper-button-prev {
+
+.carousel .swiper-button-next,
+.carousel .swiper-button-prev {
   color: var(--primary);
   transition: var(--transition);
 }
 
-.oquefazer-carousel .swiper-button-next:hover,
-.oquefazer-carousel .swiper-button-prev:hover,
-.destaques-carousel .swiper-button-next:hover,
-.destaques-carousel .swiper-button-prev:hover {
+
+.carousel .swiper-button-next:hover,
+.carousel .swiper-button-prev:hover {
   color: var(--secondary);
 }
 
@@ -1221,15 +1218,13 @@ footer {
   /* Ajusta a posição da seta direita */
 }
 
-.oquefazer-carousel .swiper-pagination-bullet,
-.destaques-carousel .swiper-pagination-bullet {
+.carousel .swiper-pagination-bullet {
   background: var(--primary);
   opacity: 0.5;
   transition: opacity 0.3s;
 }
 
-.oquefazer-carousel .swiper-pagination-bullet-active,
-.destaques-carousel .swiper-pagination-bullet-active {
+.carousel .swiper-pagination-bullet-active {
   background: var(--secondary);
   opacity: 1;
 }
