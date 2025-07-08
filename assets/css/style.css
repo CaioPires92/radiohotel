@@ -350,7 +350,7 @@ h4 {
 
 .form-control {
   width: 100%;
-  padding: 14px 40px 14px 45px; /* Increased right padding for select input */
+  padding: 14px 20px 14px 45px;
   /* Adjusted padding for better placeholder visibility */
   border: 1px solid #d1d5db;
   border-radius: 8px;
