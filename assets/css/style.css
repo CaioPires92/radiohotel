@@ -1662,7 +1662,7 @@ footer {
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
-  align-items: center; /* Centraliza verticalmente os itens flex */
+  align-items: flex-start; /* Alinha os itens pelo topo */
   margin-top: 40px;
 }
 
@@ -1701,7 +1701,8 @@ footer {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative; /* Para posicionar a imagem e os pins */
+  position: sticky; /* Torna o elemento "grudento" */
+  top: 120px; /* Distância do topo da viewport para "grudar" (ajustado para navbar) */
   display: flex; /* Adicionado para flexbox */
   align-items: center; /* Centraliza verticalmente */
   justify-content: center; /* Centraliza horizontalmente (se a imagem for menor que o contêiner) */
