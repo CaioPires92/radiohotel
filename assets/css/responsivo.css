@@ -242,6 +242,7 @@
 
   .form-control {
     font-size: 12px;
+    padding: 12px 12px 12px 35px; /* Adjusted padding for smaller screens */
   }
 
   .btn-submit {
