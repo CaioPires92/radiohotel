@@ -1,6 +1,6 @@
 window.initSwipers = function () {
   const carouselData = {
-    'oque-fazer': [
+    'programacoes': [
       {
         img: 'assets/images/programacoes/especiais.png',
         title: 'Pacotes Especiais',
@@ -127,15 +127,15 @@ window.initSwipers = function () {
       const prev = swiperContainer.querySelector('.swiper-button-prev');
 
       const baseConfig = {
-          loop: true,
-          centeredSlides: true,
-          slidesPerView: 1,
-          autoplay: { delay: 5000, disableOnInteraction: false },
-          pagination: { el: pagination, clickable: true },
-          navigation: { nextEl: next, prevEl: prev },
-          observer: true, // Adicionado para observar mudanças no próprio Swiper
-          observeParents: true, // Adicionado para observar mudanças nos pais do Swiper
-          breakpoints: {
+        loop: true,
+        centeredSlides: true,
+        slidesPerView: 1,
+        autoplay: { delay: 5000, disableOnInteraction: false },
+        pagination: { el: pagination, clickable: true },
+        navigation: { nextEl: next, prevEl: prev },
+        observer: true, // Adicionado para observar mudanças no próprio Swiper
+        observeParents: true, // Adicionado para observar mudanças nos pais do Swiper
+        breakpoints: {
           1024: {
             slidesPerView: 3,
             spaceBetween: 30,
@@ -148,9 +148,9 @@ window.initSwipers = function () {
           },
           0: {
             slidesPerView: 1,
-            
+
             centeredSlides: true,
-            
+
           },
         },
         // Configurações comuns para todos os breakpoints
